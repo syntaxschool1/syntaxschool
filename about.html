@@ -3,1004 +3,1035 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Syntax School - Premier technical education in web development, programming, AI, and data science">
+    <meta name="keywords" content="coding school, programming courses, web development, data science, AI courses">
+    <meta name="author" content="Syntax School">
+    <meta property="og:title" content="Syntax School - Learn Cutting-Edge Tech Skills">
+    <meta property="og:description" content="Transform your career with our project-based technical courses">
+    <meta property="og:type" content="website">
     <title>About Us - Syntax School</title>
-    <link href="img/sy.jpg" rel="icon">
+    <link href="img/sy.jpg" rel="icon" type="image/jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <style>
-        :root {
-            --primary: #00aaff;
-            --secondary: #0066cc;
-            --dark: #1a1a2e;
-            --light: #f8f9fa;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Underdog&display=swap" rel="stylesheet">
+  <style>
+    :root {
+    --primary: #00aaff;
+    --secondary: #0066cc;
+    --dark: #1a1a2e;
+    --light: #f8f9fa;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--light);
-            color: #333;
-            line-height: 1.7;
-            position: relative;
-            overflow-x: hidden;
-        }
-        
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0,170,255,0.05) 0%, rgba(255,255,255,0.05) 100%);
-            z-index: -1;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Navbar Styles */
-        .navbar {
-            background-color: #ffffff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 5%;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 999;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            height: 84px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        .brand {
-            display: flex;
-            align-items: center;
-        }
+body {
+    background-color: var(--light);
+    color: #333;
+    line-height: 1.7;
+    position: relative;
+    overflow-x: hidden;
+}
 
-        .brand a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,170,255,0.05) 0%, rgba(255,255,255,0.05) 100%);
+    z-index: -1;
+}
 
-        .logo {
-            height: 60px;
-            margin-right: 15px;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        .brand-name {
-            white-space: nowrap;
-            color: #00aaff;
-            font-size: 29px;
-            font-weight: 800;
-            transition: all 0.3s ease;
-            font-family: "Underdog", system-ui;
-        }
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 84px;
+}
 
-        .brand-name:hover {
-            color: #000;
-            transform: scale(1.05);
-        }
+.brand {
+    display: flex;
+    align-items: center;
+}
 
-        nav a.active {
-            background-color: #00aaff;
-            color: white;
-            border-radius: 10px;
-        }
+.brand a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+.logo {
+    height: 60px;
+    margin-right: 15px;
+}
 
-        .nav-links li {
-            margin-left: 25px;
-            position: relative;
-        }
+.brand-name {
+    white-space: nowrap;
+    color: #00aaff;
+    font-size: 29px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    font-family: "Underdog", system-ui;
+}
 
-        .nav-links a {
-            color: #039ae5;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 12px;
-            position: relative;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
+.brand-name:hover {
+    color: #000;
+    transform: scale(1.05);
+}
 
-        .nav-links a:hover {
-            background-color: #00aaff;
-            color: white;
-            border-radius: 10px;
-        }
+nav a.active {
+    background-color: #00aaff;
+    color: white;
+    border-radius: 10px;
+}
 
-        .menu-toggle {
-            display: none;
-            font-size: 28px;
-            color: #00aaff;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-        }
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
 
-        /* About School Section */
-        .about-school {
-            padding: 100px 0 60px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .about-school h1 {
-            font-size: 3.5rem;
-            color: #00aaff;
-            margin-bottom: 30px;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .about-school h1::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: #00aaff;
-            border-radius: 2px;
-        }
-        
-        .about-school p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #444;
-        }
-        
-        /* Mission/Vision Section */
-        .mission-vision {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin: 80px 0;
-            position: relative;
-        }
-        
-        .mission, .vision {
-            flex: 1;
-            min-width: 300px;
-            padding: 40px;
-            margin: 15px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,170,255,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .mission:hover, .vision:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,170,255,0.15);
-        }
-        
-        .mission::before, .vision::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #00aaff, #0066cc);
-        }
-        
-        .mission h2, .vision h2 {
-            color: #00aaff;
-            margin-bottom: 20px;
-            font-size: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .mission h2::after, .vision h2::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: #00aaff;
-        }
-        
-        /* Team Section */
-        .team-section {
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .team-section h2 {
-            font-size: 2.8rem;
-            color: #00aaff;
-            margin-bottom: 60px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .team-section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: #00aaff;
-            border-radius: 2px;
-        }
-        
-        .team-members {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-        }
-        
-        .team-member {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            width: 280px;
-            box-shadow: 0 10px 30px rgba(0,170,255,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .team-member::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #00aaff, #0066cc);
-        }
-        
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,170,255,0.2);
-        }
-        
-        .team-member img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 25px;
-            border: 5px solid #00aaff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .team-member:hover img {
-            border-color: #0066cc;
-            transform: scale(1.05);
-        }
-        
-        .team-member h3 {
-            color: #00aaff;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
-        
-        .team-member p.position {
-            color: #666;
-            font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-        
-        .team-member p {
-            color: #555;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .social-links a {
-            color: #00aaff;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            color: #0066cc;
-            transform: translateY(-3px);
-        }
-        
-        /* CEO Section */ 
-        
-        /* CEO Section - Hero Style */
-        .founder-hero {
-            display: flex;
-            align-items: center;
-            min-height: 100vh;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .founder-hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0,170,255,0.05) 0%, rgba(255,255,255,0.05) 100%);
-            z-index: -1;
-        }
-        
-        .founder-content {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-        
-        .founder-image {
-            flex: 1;
-            min-width: 350px;
-            position: relative;
-        }
-        
-        .founder-image img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-            border: 5px solid white;
-            transition: transform 0.5s ease;
-        }
-        
-        .founder-image:hover img {
-            transform: scale(1.03);
-        }
-        
-        .founder-badge {
-            position: absolute;
-            bottom: -20px;
-            right: 20px;
-            background: var(--primary);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            box-shadow: 0 10px 30px rgba(0,170,255,0.3);
-        }
-        
-        .founder-details {
-            flex: 1;
-            min-width: 350px;
-        }
-        
-        .founder-header h1 {
-            font-size: 3rem;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-        
-        .founder-header p.title {
-            font-size: 1.5rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-        
-        .founder-header p.subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .founder-bio {
-            margin-bottom: 40px;
-        }
-        
-        .founder-bio p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: #444;
-        }
-        
-        .founder-stats {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
-            background: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            min-width: 150px;
-        }
-        
-        .stat-item .number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1;
-        }
-        
-        .stat-item .label {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .founder-skills {
-            margin-bottom: 40px;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .skill-item {
-            background: white;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            font-weight: 500;
-            color: var(--dark);
-            transition: all 0.3s ease;
-        }
-        
-        .skill-item:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        .founder-cta {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .cta-button {
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .primary-cta {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 5px 15px rgba(0,170,255,0.3);
-        }
-        
-        .primary-cta:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,170,255,0.4);
-        }
-        
-        .secondary-cta {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .secondary-cta:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        /* Experience Timeline */
-        .experience-section {
-            padding: 80px 0;
-            background: white;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-        
-        .section-header p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background: var(--primary);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px;
-            display: flex;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            justify-content: flex-end;
-            padding-right: 30px;
-        }
-        
-        .timeline-item:nth-child(even) {
-            justify-content: flex-start;
-            padding-left: 30px;
-        }
-        
-        .timeline-content {
-            width: calc(50% - 40px);
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            position: relative;
-        }
-        
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 30px;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 50%;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content::before {
-            left: -10px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content::before {
-            right: -10px;
-        }
-        
-        .timeline-date {
-            position: absolute;
-            top: 20px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-date {
-            right: calc(50% + 60px);
-        }
-        
-        .timeline-item:nth-child(even) .timeline-date {
-            left: calc(50% + 60px);
-        }
-        
-        .timeline-content h3 {
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-        
-        .timeline-content p.company {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .founder-header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .founder-image img {
-                max-width: 350px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .founder-content {
-                flex-direction: column;
-            }
-            
-            .founder-image, .founder-details {
-                min-width: 100%;
-            }
-            
-            .timeline::before {
-                left: 30px;
-            }
-            
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                justify-content: flex-start;
-                padding-left: 60px;
-                padding-right: 0;
-            }
-            
-            .timeline-content {
-                width: 100%;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content::before,
-            .timeline-item:nth-child(even) .timeline-content::before {
-                left: -40px;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-date,
-            .timeline-item:nth-child(even) .timeline-date {
-                left: 0;
-                right: auto;
-                top: -25px;
-            }
-        }
-        
-        /* Footer Styles */
-        .site-footer {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: #ffffff;
-            padding: 70px 20px 30px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            position: relative;
-        }
+.nav-links li {
+    margin-left: 25px;
+    position: relative;
+}
 
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
+.nav-links a {
+    color: #039ae5;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 40px;
-        }
+.nav-links a:hover {
+    background-color: #00aaff;
+    color: white;
+    border-radius: 10px;
+}
 
-        .footer-brand {
-            display: flex;
-            flex-direction: column;
-        }
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #00aaff;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
 
-        .footer-logo-link {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            margin-bottom: 20px;
-        }
+.menu-icon {
+    display: inline-block;
+}
 
-        .footer-logo {
-            width: 60px;
-            height: auto;
-            margin-right: 15px;
-        }
+/* About School Section */
+.about-school {
+    padding: 100px 0 60px;
+    text-align: center;
+    position: relative;
+}
 
-        .footer-brand-name {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #ffffff;
-            font-family: 'Underdog', system-ui;
-        }
+.about-school h1 {
+    font-size: 3.5rem;
+    color: #00aaff;
+    margin-bottom: 30px;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    display: inline-block;
+}
 
-        .footer-tagline {
-            color: #b2bec3;
-            margin-bottom: 25px;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
+.about-school h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #00aaff;
+    border-radius: 2px;
+}
 
-        .footer-social {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 25px;
-        }
+.about-school p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #444;
+}
 
-        .footer-social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            color: #ffffff;
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-        }
+/* Mission/Vision Section */
+.mission-vision {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 80px 0;
+    position: relative;
+}
 
-        .footer-social a:hover {
-            background: #00aaff;
-            transform: translateY(-3px);
-        }
+.mission, .vision {
+    flex: 1;
+    min-width: 300px;
+    padding: 40px;
+    margin: 15px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,170,255,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
 
-        .footer-contact {
-            margin-top: 20px;
-        }
+.mission:hover, .vision:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,170,255,0.15);
+}
 
-        .footer-contact a {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-            word-break: break-word;
-            font-size: 1rem;
-        }
+.mission::before, .vision::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #00aaff, #0066cc);
+}
 
-        .footer-contact a i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-            color: #00aaff;
-        }
+.mission h2, .vision h2 {
+    color: #00aaff;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+}
 
-        .footer-contact a:hover {
-            color: #00aaff;
-        }
+.mission h2::after, .vision h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #00aaff;
+}
 
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 40px;
-        }
+/* Team Section */
+.team-section {
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+}
 
-        .links-column {
-            min-width: 180px;
-        }
+.team-section h2 {
+    font-size: 2.8rem;
+    color: #00aaff;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+}
 
-        .links-heading {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: #ffffff;
-            position: relative;
-            padding-bottom: 10px;
-        }
+.team-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #00aaff;
+    border-radius: 2px;
+}
 
-        .links-heading::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background: #00aaff;
-        }
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
 
-        .links-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+.team-member {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    width: 280px;
+    box-shadow: 0 10px 30px rgba(0,170,255,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
 
-        .links-column ul li {
-            margin-bottom: 12px;
-        }
+.team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #00aaff, #0066cc);
+}
 
-        .links-column ul li a {
-            display: block;
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            padding: 5px 0;
-        }
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,170,255,0.2);
+}
 
-        .links-column ul li a:hover {
-            color: #00aaff;
-            padding-left: 8px;
-        }
+.team-member img {
+    width: 160px;
+    height: 160px;
+    border-radius: 30%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border: 4px solid #00aaff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
 
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 25px;
-            text-align: center;
-            font-size: 0.95rem;
-            color: #aaa;
-        }
+.team-member:hover img {
+    border-color: #0066cc;
+    transform: scale(1.05);
+}
 
-        .footer-bottom a {
-            color: #00aaff;
-            text-decoration: none;
-            margin: 0 5px;
-            transition: color 0.3s;
-        }
+.team-member h3 {
+    color: #00aaff;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
 
-        .footer-bottom a:hover {
-            text-decoration: underline;
-        }
+.team-member p.position {
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
 
-        /* Background Elements */
-        .bg-element {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.1;
-            z-index: 0;
-        }
+.team-member p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
 
-        .bg-1 {
-            width: 300px;
-            height: 300px;
-            background: #00aaff;
-            top: -150px;
-            right: -150px;
-        }
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
-        .bg-2 {
-            width: 200px;
-            height: 200px;
-            background: #0066cc;
-            bottom: 100px;
-            left: -100px;
-        }
+.social-links a {
+    color: #00aaff;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
 
-        /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .about-school h1 {
-                font-size: 3rem;
-            }
-            
-            .ceo-image img {
-                width: 240px;
-                height: 240px;
-            }
-            
-            .team-member {
-                width: 240px;
-            }
-        }
+.social-links a:hover {
+    color: #0066cc;
+    transform: translateY(-3px);
+}
 
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 12px 3%;
-            }
-            
-            .mission-vision {
-                flex-direction: column;
-            }
-            
-            .mission, .vision {
-                margin: 15px 0;
-            }
-            
-            .ceo-container {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 30px;
-            }
-            
-            .ceo-text {
-                text-align: center;
-            }
-            
-            .footer-grid {
-                gap: 40px;
-            }
-            
-            .footer-links {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+/* Founder Section - Hero Style */
+.founder-hero {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
 
-        @media (max-width: 576px) {
-            .about-school {
-                padding: 80px 0 40px;
-            }
-            
-            .about-school h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-school p {
-                font-size: 1.1rem;
-            }
-            
-            .team-section h2, .ceo-section h2 {
-                font-size: 2.2rem;
-            }
-            
-            .ceo-image img {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .ceo-quote {
-                font-size: 1.3rem;
-                padding: 20px;
-            }
-            
-            .footer-brand-name {
-                font-size: 1.5rem;
-            }
-            
-            .footer-logo {
-                width: 50px;
-            }
-            
-            .links-heading {
-                font-size: 1.2rem;
-            }
-            
-            .footer-links {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+.founder-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,170,255,0.05) 0%, rgba(255,255,255,0.05) 100%);
+    z-index: -1;
+}
+
+.founder-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.founder-image {
+    flex: 1;
+    min-width: 350px;
+    position: relative;
+}
+
+.founder-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    border: 5px solid white;
+    transition: transform 0.5s ease;
+}
+
+.founder-image:hover img {
+    transform: scale(1.03);
+}
+
+.founder-badge {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(0,170,255,0.3);
+}
+
+.founder-details {
+    flex: 1;
+    min-width: 350px;
+}
+
+.founder-header h1 {
+    font-size: 3rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.founder-header p.title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.founder-header p.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.founder-bio {
+    margin-bottom: 40px;
+}
+
+.founder-bio p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.founder-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    min-width: 150px;
+}
+
+.stat-item .number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.stat-item .label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.founder-skills {
+    margin-bottom: 40px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-item {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    font-weight: 500;
+    color: var(--dark);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.founder-cta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.primary-cta {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,170,255,0.3);
+}
+
+.primary-cta:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,170,255,0.4);
+}
+
+.secondary-cta {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.secondary-cta:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Experience Timeline */
+.experience-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--primary);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.timeline-item:nth-child(odd) {
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-left: 30px;
+}
+
+.timeline-content {
+    width: calc(50% - 40px);
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    left: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    right: -10px;
+}
+
+.timeline-date {
+    position: absolute;
+    top: 20px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.timeline-item:nth-child(odd) .timeline-date {
+    right: calc(50% + 60px);
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    left: calc(50% + 60px);
+}
+
+.timeline-content h3 {
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.timeline-content p.company {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Footer Styles */
+.site-footer {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #ffffff;
+    padding: 70px 20px 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.footer-brand-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'Underdog', system-ui;
+}
+
+.footer-tagline {
+    color: #b2bec3;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #00aaff;
+    transform: translateY(-3px);
+}
+
+.footer-contact {
+    margin-top: 20px;
+}
+
+.footer-contact a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+    word-break: break-word;
+    font-size: 1rem;
+}
+
+.footer-contact a i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #00aaff;
+}
+
+.footer-contact a:hover {
+    color: #00aaff;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+}
+
+.links-column {
+    min-width: 180px;
+}
+
+.links-heading {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.links-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: #00aaff;
+}
+
+.links-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-column ul li {
+    margin-bottom: 12px;
+}
+
+.links-column ul li a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    padding: 5px 0;
+}
+
+.links-column ul li a:hover {
+    color: #00aaff;
+    padding-left: 8px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 25px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #aaa;
+}
+
+.footer-bottom a {
+    color: #00aaff;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Background Elements */
+.bg-element {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.bg-1 {
+    width: 300px;
+    height: 300px;
+    background: #00aaff;
+    top: -150px;
+    right: -150px;
+}
+
+.bg-2 {
+    width: 200px;
+    height: 200px;
+    background: #0066cc;
+    bottom: 100px;
+    left: -100px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .about-school h1 {
+        font-size: 3rem;
+    }
+    
+    .team-member {
+        width: 240px;
+    }
+    
+    .founder-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .founder-image img {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 3%;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 84px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 84px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .mission-vision {
+        flex-direction: column;
+    }
+    
+    .mission, .vision {
+        margin: 15px 0;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        justify-content: flex-start;
+        padding-left: 60px;
+        padding-right: 0;
+    }
+    
+    .timeline-content {
+        width: 100%;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::before,
+    .timeline-item:nth-child(even) .timeline-content::before {
+        left: -40px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-date,
+    .timeline-item:nth-child(even) .timeline-date {
+        left: 0;
+        right: auto;
+        top: -25px;
+    }
+    
+    .footer-grid {
+        gap: 40px;
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .about-school {
+        padding: 80px 0 40px;
+    }
+    
+    .about-school h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-school p {
+        font-size: 1.1rem;
+    }
+    
+    .team-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .footer-brand-name {
+        font-size: 1.5rem;
+    }
+    
+    .footer-logo {
+        width: 50px;
+    }
+    
+    .links-heading {
+        font-size: 1.2rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .founder-content {
+        padding: 20px;
+    }
+    
+    .founder-image, .founder-details {
+        min-width: 100%;
+    }
+    
+    .founder-header h1 {
+        font-size: 2rem;
+    }
+    
+    .founder-header p.title {
+        font-size: 1.2rem;
+    }
+    
+    .stat-item {
+        min-width: 120px;
+        padding: 10px 15px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .cta-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
+  </style>
 </head>
-<body> 
+<body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="brand">
-          <a href="index.html">
-            <img src="img/sy.jpg" alt="Logo" class="logo" />
-            <span class="brand-name">SYNTAX SCHOOL</span>
-          </a>
+            <a href="index.html">
+                <img src="img/sy.jpg" alt="Syntax School Logo" class="logo">
+                <span class="brand-name">SYNTAX SCHOOL</span>
+            </a>
         </div>
-  
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+            <span class="menu-icon">&#9776;</span>
+        </button>
         <ul class="nav-links" id="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="Contact.html">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -1024,122 +1055,107 @@
             </div>
         </section>
         
-        <!-- CEO Section -->
-        <div class="container">
-            <!-- Founder Hero Section -->
-            <section class="founder-hero">
-                <div class="founder-content">
-                    <div class="founder-image">
-                        <img src="img/ak.jpg" alt="Akash Tomar">
-                        <div class="founder-badge">
-                            Founder & CEO
-                        </div>
-                    </div>
-                    <div class="founder-details">
-                        <div class="founder-header">
-                            <h1>Akash Tomar</h1>
-                            <p class="title">Founder & CEO</p>
-                            <p class="subtitle">
-                                <i class="fas fa-map-marker-alt"></i>
-                                New York University, USA
-                            </p>
-                        </div>
-                        
-                        <div class="founder-bio">
-                            <p>As an accomplished and results-driven Product Manager, I thrive at the intersection of data, design, and customer experience, turning insights into impactful strategies that fuel business growth.</p>
-                            <p>With expertise in product-led growth, market analysis, and Agile methodologies, I specialize in optimizing user adoption, retention, and revenue expansion.</p>
-                            <p>Currently at CodersData, I lead initiatives that have enhanced product development efficiency by 25% and boosted customer satisfaction by 40%, leveraging data to drive $1.5M+ in business growth.</p>
-                        </div>
-                        
-                        <div class="founder-stats">
-                            <div class="stat-item">
-                                <div class="number">701</div>
-                                <div class="label">Followers</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="number">500+</div>
-                                <div class="label">Connections</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="number">1.5M+</div>
-                                <div class="label">Revenue Driven</div>
-                            </div>
-                        </div>
-                        
-                        <div class="founder-skills">
-                            <h3>Technical Skills</h3>
-                            <div class="skills-grid">
-                                <div class="skill-item">Python</div>
-                                <div class="skill-item">SQL</div>
-                                <div class="skill-item">MySQL</div>
-                                <div class="skill-item">Figma</div>
-                                <div class="skill-item">Tableau</div>
-                                <div class="skill-item">PowerBI</div>
-                                <div class="skill-item">Jira</div>
-                                <div class="skill-item">AWS</div>
-                            </div>
-                        </div>
-                        
-                        <div class="founder-cta">
-                            <a href="#" class="cta-button primary-cta">
-                                <i class="fab fa-linkedin-in"></i>
-                                Connect on LinkedIn
-                            </a>
-                            <a href="#" class="cta-button secondary-cta">
-                                <i class="fas fa-envelope"></i>
-                                Send Message
-                            </a>
-                        </div>
+        <!-- Founder Section -->
+        <section class="founder-hero">
+            <div class="founder-content">
+                <div class="founder-image">
+                    <img src="img/ak.jpg" alt="Akash Tomar - Founder & CEO">
+                    <div class="founder-badge">
+                        Founder & CEO
                     </div>
                 </div>
-            </section>
+                <div class="founder-details">
+                    <div class="founder-header">
+                        <h1>Akash Tomar</h1>
+                        <p class="title">Founder & CEO</p>
+                        <p class="subtitle">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            New York University, USA
+                        </p>
+                    </div>
+                    
+                    <div class="founder-bio">
+                        <p>As an accomplished and results-driven Product Manager, I thrive at the intersection of data, design, and customer experience, turning insights into impactful strategies that fuel business growth.</p>
+                        <p>With expertise in product-led growth, market analysis, and Agile methodologies, I specialize in optimizing user adoption, retention, and revenue expansion.</p>
+                        <p>Currently at CodersData, I lead initiatives that have enhanced product development efficiency by 25% and boosted customer satisfaction by 40%, leveraging data to drive $1.5M+ in business growth.</p>
+                    </div>
+                    
+                    <div class="founder-stats">
+                        <div class="stat-item">
+                            <div class="number">701</div>
+                            <div class="label">Followers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">500+</div>
+                            <div class="label">Connections</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">1.5M+</div>
+                            <div class="label">Revenue Driven</div>
+                        </div>
+                    </div>
+                    
+                     
+                    
+                    <div class="founder-cta">
+                        <a href="#" class="cta-button primary-cta">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            Connect on LinkedIn
+                        </a>
+                        <a  href="mailto:syntaxschool1@gmail.com" class="cta-button secondary-cta">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            Send Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section class="experience-section">
+            <div class="section-header">
+                <h2>Professional Journey</h2>
+                <p>Akash's career path demonstrates consistent growth and impact across technology and business strategy roles</p>
+            </div>
             
-            <!-- Experience Section -->
-            <section class="experience-section">
-                <div class="section-header">
-                    <h2>Professional Journey</h2>
-                    <p>Akash's career path demonstrates consistent growth and impact across technology and business strategy roles</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - Present</div>
+                        <h3>Growth Product Manager</h3>
+                        <p class="company">CodersData</p>
+                        <p>Led product initiatives driving $1.5M+ in business growth. Enhanced development efficiency by 25% and customer satisfaction by 40% through data-driven strategies.</p>
+                    </div>
                 </div>
                 
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2022 - Present</div>
-                            <h3>Growth Product Manager</h3>
-                            <p class="company">CodersData</p>
-                            <p>Led product initiatives driving $1.5M+ in business growth. Enhanced development efficiency by 25% and customer satisfaction by 40% through data-driven strategies.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2020 - 2022</div>
-                            <h3>Product Strategist</h3>
-                            <p class="company">TechSolutions Inc.</p>
-                            <p>Implemented Agile methodologies that reduced time-to-market by 30%. Spearheaded market research initiatives that identified $500K revenue opportunities.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2018 - 2020</div>
-                            <h3>Business Analyst</h3>
-                            <p class="company">DataInsights LLC</p>
-                            <p>Developed data models that improved decision-making accuracy by 35%. Led cross-functional teams in implementing customer experience improvements.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">2016 - 2018</div>
-                            <h3>Master's in Management of Technology</h3>
-                            <p class="company">New York University</p>
-                            <p>Specialized in product innovation and data-driven decision making. Graduated with honors while consulting for tech startups.</p>
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <h3>Product Strategist</h3>
+                        <p class="company">TechSolutions Inc.</p>
+                        <p>Implemented Agile methodologies that reduced time-to-market by 30%. Spearheaded market research initiatives that identified $500K revenue opportunities.</p>
                     </div>
                 </div>
-            </section>
-        </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018 - 2020</div>
+                        <h3>Business Analyst</h3>
+                        <p class="company">DataInsights LLC</p>
+                        <p>Developed data models that improved decision-making accuracy by 35%. Led cross-functional teams in implementing customer experience improvements.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016 - 2018</div>
+                        <h3>Master's in Management of Technology</h3>
+                        <p class="company">New York University</p>
+                        <p>Specialized in product innovation and data-driven decision making. Graduated with honors while consulting for tech startups.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <!-- Team Section -->
         <section class="team-section">
@@ -1147,28 +1163,27 @@
             <div class="team-members">
                 <!-- Team Member 1 -->
                 <div class="team-member">
-                    <img src="img/joyti.jpg" alt="Rahul Sharma">
+                    <img src="img/joyti.jpg" alt="Jyoti Seth - Managing Director">
                     <h3>Jyoti Seth</h3>
-                    <p class="position"> Managing Director</p>
+                    <p class="position">Managing Director</p>
                     <p>M.Tech (AI) NSUT Delhi</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a> 
+                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram profile"><i class="fab fa-instagram" aria-hidden="true"></i></a> 
                     </div>
                 </div>
                 
                 <!-- Team Member 2 -->
                 <div class="team-member">
-                    <img src="img/p2.jpg" alt="Priya Patel">
-                    <h3>Raghava Sandhu </h3>
-                    <p class="position"></p>
+                    <img src="img/p2.jpg" alt="Raghava Sandhu - AI Expert" loading="eager">
+                    <h3>Raghava Sandhu</h3>
+                    <p class="position">AI Specialist</p>
                     <p>M.Tech (AI) IIT Madras</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a> 
+                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram profile"><i class="fab fa-instagram" aria-hidden="true"></i></a> 
                     </div>
                 </div>
-                 
             </div>
         </section>
     </div> 
@@ -1180,7 +1195,6 @@
         
         <div class="footer-container">
             <div class="footer-grid">
-                
                 <!-- Brand & Contact -->
                 <div class="footer-brand">
                     <a href="index.html" class="footer-logo-link">
@@ -1191,24 +1205,24 @@
                     <p class="footer-tagline">Master the language of programming with our expert-led courses and hands-on projects.</p>
             
                     <div class="footer-social">
-                        <a href="https://www.instagram.com/_syntax_school_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/_syntax_school_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="#" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
-                        <a href="#" target="_blank">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
                         </a>
-                        <a href="#" target="_blank">
-                            <i class="fab fa-youtube"></i>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
                         </a>
                     </div>
             
                     <div class="footer-contact">
-                        <a href="mailto:syntaxschool1@gmail.com"><i class="fas fa-envelope"></i> syntaxschool1@gmail.com</a>
-                        <a href="tel:+918826109871"><i class="fas fa-phone-alt"></i> +91 8826109871</a>
-                        <a href="#"><i class="fas fa-map-marker-alt"></i> Silicon Valley, CA</a>
+                        <a href="mailto:syntaxschool1@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> syntaxschool1@gmail.com</a>
+                        <a href="tel:+918826109871"><i class="fas fa-phone-alt" aria-hidden="true"></i> +91 8826109871</a>
+                        <a href="#"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Silicon Valley, CA</a>
                     </div>
                 </div>
             
@@ -1217,7 +1231,7 @@
                     <div class="links-column">
                         <h4 class="links-heading">Learn</h4>
                         <ul>
-                            <li><a href="#">Courses</a></li>
+                            <li><a href="courses.html">Courses</a></li>
                             <li><a href="#">Tutorials</a></li>
                             <li><a href="#">Projects</a></li>
                             <li><a href="#">Challenges</a></li>
@@ -1235,7 +1249,7 @@
                     <div class="links-column">
                         <h4 class="links-heading">Company</h4>
                         <ul>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="about.html">About Us</a></li>
                             <li><a href="#">Careers</a></li>
                             <li><a href="#">Testimonials</a></li>
                             <li><a href="#">Partners</a></li>
@@ -1250,72 +1264,118 @@
             </div>
         </div>
     </footer>
-  
-    <script>
-        // Toggle navigation menu for smaller screens
-        const toggle = document.getElementById("menu-toggle");
-        const nav = document.getElementById("nav-links");
-  
-        toggle.addEventListener("click", () => {
-            nav.classList.toggle("active");
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Toggle navigation menu for mobile
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+    
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        toggle.classList.toggle("active");
+    });
+    
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove("active");
+            toggle.classList.remove("active");
         });
-  
-        // Typing effect phrases array
-        const phrases = [
-            "Transform Your Skills and Rise to the Top Developer in Tech.",
-            "Build Real Projects. Grow Real Skills.",
-            "Master Programming. Lead the Future.",
-            "Code Your Dreams into Reality.",
-            "From Beginner to Pro – We've Got You Covered.",
-        ];
-  
-        // Indexes and states for typing animation
-        let i = 0,
-            j = 0;
-        let currentPhrase = [];
-        let isDeleting = false;
-  
-        function loop() {
-            const textElement = document.getElementById("changing-text");
-  
-            // Typing the phrase
-            if (!isDeleting && j <= phrases[i].length) {
-                currentPhrase.push(phrases[i][j]);
-                j++;
-            }
-  
-            // Deleting the phrase
-            if (isDeleting && j >= 0) {
-                currentPhrase.pop();
-                j--;
-            }
-  
-            // Show the current text
-            textElement.innerHTML = currentPhrase.join("");
-  
-            // Add fade animation effect
-            textElement.classList.add("fade-in");
-            setTimeout(() => textElement.classList.remove("fade-in"), 300);
-  
-            // Wait before starting deletion
-            if (!isDeleting && j === phrases[i].length) {
-                isDeleting = true;
-                setTimeout(loop, 2000);
-                return;
-            }
-  
-            // Move to the next phrase after deleting
-            if (isDeleting && j === 0) {
-                isDeleting = false;
-                i = (i + 1) % phrases.length;
-            }
-  
-            // Recursive call with typing speed
-            setTimeout(loop, isDeleting ? 40 : 100);
+    });
+    
+    // Typing effect for hero text (if needed)
+    const phrases = [
+        "Transform Your Skills and Rise to the Top Developer in Tech.",
+        "Build Real Projects. Grow Real Skills.",
+        "Master Programming. Lead the Future.",
+        "Code Your Dreams into Reality.",
+        "From Beginner to Pro – We've Got You Covered.",
+    ];
+    
+    let i = 0,
+        j = 0;
+    let currentPhrase = [];
+    let isDeleting = false;
+    
+    function loop() {
+        const textElement = document.getElementById("changing-text");
+        
+        if (!textElement) return;
+        
+        // Typing the phrase
+        if (!isDeleting && j <= phrases[i].length) {
+            currentPhrase.push(phrases[i][j]);
+            j++;
         }
-  
-        // Start the typewriter loop
+        
+        // Deleting the phrase
+        if (isDeleting && j >= 0) {
+            currentPhrase.pop();
+            j--;
+        }
+        
+        // Show the current text
+        textElement.innerHTML = currentPhrase.join("");
+        
+        // Add fade animation effect
+        textElement.classList.add("fade-in");
+        setTimeout(() => textElement.classList.remove("fade-in"), 300);
+        
+        // Wait before starting deletion
+        if (!isDeleting && j === phrases[i].length) {
+            isDeleting = true;
+            setTimeout(loop, 2000);
+            return;
+        }
+        
+        // Move to the next phrase after deleting
+        if (isDeleting && j === 0) {
+            isDeleting = false;
+            i = (i + 1) % phrases.length;
+        }
+        
+        // Recursive call with typing speed
+        setTimeout(loop, isDeleting ? 40 : 100);
+    }
+    
+    // Start the typewriter loop if element exists
+    if (document.getElementById("changing-text")) {
         loop();
-    </script>
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Lazy loading for images
+    if ('loading' in HTMLImageElement.prototype) {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    } else {
+        // Fallback for browsers that don't support lazy loading
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+        script.async = true;
+        document.body.appendChild(script);
+    }
+});
+ </script>
 </body>
 </html>
