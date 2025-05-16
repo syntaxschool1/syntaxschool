@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form | Syntax School</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 84px; /* Space for fixed navbar */
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            height: 84px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo {
+            height: 60px;
+            margin-right: 15px;
+        }
+
+        .brand-name {
+            white-space: nowrap;
+            color: #00aaff;
+            font-size: 29px;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            font-family: 'Underdog', system-ui;
+        }
+
+        .brand-name:hover {
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        nav a.active {
+            background-color: #00aaff;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #039ae5;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background-color: #00aaff;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: #00aaff;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            flex-direction: column;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1000;
+            min-width: 200px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: flex;
+        }
+
+        .dropdown-menu li a {
+            padding: 10px 20px;
+            color: #333;
+            background-color: #fff;
+            display: block;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #00aaff;
+            color: #fff;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Form Container */
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #00aaff;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #00aaff;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 170, 255, 0.2);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            height: 45px;
+        }
+
+        select {
+            height: 45px;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 15px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            background: #00aaff;
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #0088cc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .thank-you h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .thank-you p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .required-field::after {
+            content: " *";
+            color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* Country code selector */
+        .phone-input {
+            display: flex;
+            align-items: center;
+        }
+
+        .country-code {
+            width: 80px;
+            margin-right: 10px;
+        }
+
+        .phone-number {
+            flex: 1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 12px 20px;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 84px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+            
+            .phone-input {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .country-code {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">
+            <a href="index.html">
+                <img src="img/sy.jpg" alt="Logo" class="logo" />
+                <span class="brand-name">SYNTAX SCHOOL</span>
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div class="container" id="form-container">
+            <h1>Register for Course</h1>
+            <form id="myForm" action="https://formsubmit.co/syntaxschool1@gmail.com" method="POST">
+                <!-- FormSubmit Hidden Fields -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="#thank-you">
+                <input type="hidden" name="_subject" value="New Course Registration">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Thank you for registering with Syntax School! We have received your registration and will contact you shortly.">
+
+                <!-- Form Fields -->
+                <div class="form-group">
+                    <label for="name" class="required-field">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    <div class="error-message" id="name-error">Please enter your full name</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="required-field">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+                    <div class="error-message" id="email-error">Please enter a valid email address</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="required-field">Phone Number</label>
+                    <div class="phone-input">
+                        <select class="country-code" name="country-code">
+                            <option value="+91">🇮🇳 +91</option>
+                            <option value="+1">🇺🇸 +1</option>
+                            <option value="+44">🇬🇧 +44</option>
+                            <option value="+61">🇦🇺 +61</option>
+                            <option value="+971">🇦🇪 +971</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" class="phone-number" required 
+                               pattern="[0-9]{10}" placeholder="9876543210">
+                    </div>
+                    <div class="error-message" id="phone-error">Please enter a valid 10-digit phone number</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject" class="required-field">Subject</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Course enquiry">
+                    <div class="error-message" id="subject-error">Please enter a subject</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="course" class="required-field">Interested Course</label>
+                    <select id="course" name="course" required>
+                        <option value="" disabled selected>Select a course</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Python Programming">Python Programming</option>
+                        <option value="AI/ML Engineering">AI/ML Engineering</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="C Programming">C Programming</option>
+                        <option value="C++ Programming">C++ Programming</option>
+                    </select>
+                    <div class="error-message" id="course-error">Please select a course</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="required-field">Your Message</label>
+                    <textarea id="message" name="message" required placeholder="Tell us about your requirements..."></textarea>
+                    <div class="error-message" id="message-error">Please enter your message</div>
+                </div>
+                
+                <button type="submit" id="submit-btn">Submit Registration</button>
+            </form>
+        </div>
+
+        <!-- Thank You Message (Hidden by Default) -->
+        <div class="container thank-you" id="thank-you">
+            <h1>Thank You! ✅</h1>
+            <p>Your registration has been submitted successfully.</p>
+            <p>We will contact you shortly with more information.</p>
+            <p>For immediate assistance, please call us at <strong>+91 8077799237</strong></p>
+            <p>Or email us at <strong>syntaxschool1@gmail.com</strong></p>
+        </div>
+    </div>
+ 
+
+
+    <script>
+      // Mobile menu toggle
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+          document.getElementById('nav-links').classList.toggle('active');
+      });
+
+      // Form validation
+      document.getElementById('myForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Reset error messages
+          const errorMessages = document.querySelectorAll('.error-message');
+          errorMessages.forEach(msg => msg.style.display = 'none');
+          
+          // Validate form fields
+          let isValid = true;
+          
+          // Name validation
+          const name = document.getElementById('name').value.trim();
+          if (name === '') {
+              document.getElementById('name-error').style.display = 'block';
+              isValid = false;
+          }
+          
+          // Email validation
+          const email = document.getElementById('email').value.trim();
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+              document.getElementById('email-error').style.display = 'block';
+              isValid = false;
+          }
+          
+          // Phone validation
+          const phone = document.getElementById('phone').value.trim();
+          if (phone === '' || !/^\d{10}$/.test(phone)) {
+              document.getElementById('phone-error').style.display = 'block';
+              isValid = false;
+          }
+          
+          // Subject validation
+          const subject = document.getElementById('subject').value.trim();
+          if (subject === '') {
+              document.getElementById('subject-error').style.display = 'block';
+              isValid = false;
+          }
+          
+          // Course validation
+          const course = document.getElementById('course').value;
+          if (course === '' || course === null) {
+              document.getElementById('course-error').style.display = 'block';
+              isValid = false;
+          }
+          
+          // Message validation
+          const message = document.getElementById('message').value.trim();
+          if (message === '') {
+              document.getElementById('message-error').style.display = 'block';
+              isValid = false;
+          }
+          
+          if (!isValid) {
+              // Scroll to first error
+              const firstError = document.querySelector('.error-message[style="display: block;"]');
+              if (firstError) {
+                  firstError.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'center'
+                  });
+              }
+              return;
+          }
+          
+          // Disable submit button to prevent multiple submissions
+          const submitBtn = document.getElementById('submit-btn');
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Submitting...';
+          
+          // Submit form
+          fetch(this.action, {
+              method: 'POST',
+              body: new FormData(this)
+          })
+          .then(response => {
+              if (response.ok) {
+                  // Hide form, show thank you message
+                  document.getElementById('form-container').style.display = 'none';
+                  document.getElementById('thank-you').style.display = 'block';
+                  
+                  // Scroll to thank you message
+                  document.getElementById('thank-you').scrollIntoView({
+                      behavior: 'smooth'
+                  });
+                  
+                  // Reset form
+                  this.reset();
+              } else {
+                  throw new Error('Network response was not ok');
+              }
+          })
+          .catch(error => {
+              alert('There was a problem submitting your form. Please try again.');
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Submit Registration';
+          });
+      });
+
+      // Real-time validation
+      document.querySelectorAll('input, select, textarea').forEach(element => {
+          element.addEventListener('input', function() {
+              const errorElement = document.getElementById(this.id + '-error');
+              if (errorElement) {
+                  errorElement.style.display = 'none';
+              }
+              
+              // Phone number - allow only digits
+              if (this.id === 'phone') {
+                  this.value = this.value.replace(/\D/g, '').slice(0, 10);
+              }
+          });
+      });
+
+      // REMOVED the auto-formatting on blur that was adding hyphens
+  </script>
+</body>
+</html>

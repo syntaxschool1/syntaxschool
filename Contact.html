@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Syntax School</title>
+    <link href="img/sy.jpg" rel="icon" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Underdog&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        color: #2d3436;
+        background-color: #f5f6fa;
+        padding-top: 90px;
+      }
+
+      :root {
+        --primary: #6c5ce7;
+        --secondary: #a29bfe;
+        --accent: #fd79a8;
+        --dark: #2d3436;
+        --light: #f5f6fa;
+        --success: #00b894;
+        --warning: #fdcb6e;
+        --danger: #d63031;
+        --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 5%;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        height: 84px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+      }
+
+      .brand a {
+        display: flex;  
+        align-items: center; 
+        text-decoration: none;  
+      }
+
+      .logo {
+        height: 60px;
+        margin-right: 15px;
+      }
+
+      .brand-name {
+        white-space: nowrap;  
+        color: #00aaff;
+        font-size: 29px;
+        font-weight: 800;
+        transition: all 0.3s ease;
+        font-family: "Underdog", system-ui;
+      }
+
+      .brand-name:hover {
+        color: #000;
+        transform: scale(1.05);
+      }
+
+      nav a.active {
+        background-color: #00aaff;
+        color: white;
+        border-radius: 10px;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links li {
+        margin-left: 25px;
+        position: relative;
+      }
+
+      .nav-links a {
+        color: #039ae5;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 12px;
+        position: relative;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+      }
+
+      .nav-links a:hover {
+        background-color: #00aaff;
+        color: white;
+        border-radius: 10px;    
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 28px;
+        color: #00aaff;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        z-index: 1000;
+        min-width: 200px;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: flex;
+      }
+
+      .dropdown-menu li a {
+        padding: 10px 20px;
+        color: #333;
+        background-color: #fff;
+        display: block;
+      }
+
+      .dropdown-menu li a:hover {
+        background-color: #00aaff;
+        color: #fff;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: linear-gradient(135deg, rgba(108, 92, 231, 0.05), rgba(162, 155, 254, 0.05));
+        padding: 80px 0;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .contact-info {
+        padding: 30px;
+      }
+
+      .contact-info h2 {
+        color: #00aaff;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .contact-info h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(to right, #00aaff, #a29bfe);
+      }
+
+      .contact-details {
+        margin-bottom: 40px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 170, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        color: #00aaff;
+        font-size: 20px;
+      }
+
+      .contact-text h4 {
+        color: #2d3436;
+        margin-bottom: 5px;
+      }
+
+      .contact-text p, 
+      .contact-text a {
+        color: #636e72;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .contact-text a:hover {
+        color: #00aaff;
+      }
+
+      .contact-map {
+        height: 300px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        margin-top: 20px;
+      }
+
+      .contact-map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Contact Form */
+      .contact-form {
+        background: white;
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-form h3 {
+        color: #00aaff;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #2d3436;
+        font-weight: 600;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #dfe6e9;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        background-color: #f9f9f9;
+      }
+
+      .form-control:focus {
+        border-color: #00aaff;
+        background-color: white;
+        box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.1);
+        outline: none;
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background: linear-gradient(135deg, #00aaff, #6c5ce7);
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+        margin-top: 10px;
+        box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 170, 255, 0.4);
+      }
+
+      /* Thank You Message Styles */
+      #thankYouMessage {
+        display: none;
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        animation: fadeIn 0.5s ease;
+      }
+
+      #thankYouMessage h3 {
+        color: var(--success);
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      #thankYouMessage p {
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+      }
+
+      #submittedData {
+        margin-top: 20px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+      }
+
+      #submittedData ul {
+        list-style: none;
+      }
+
+      #submittedData li {
+        margin-bottom: 8px;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      #submittedData li:last-child {
+        border-bottom: none;
+      }
+
+      #submittedData strong {
+        color: var(--primary);
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Footer */
+      .site-footer {
+        background-color: #2d3436;
+        color: #f5f6fa;
+        padding: 60px 0 20px;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: 15px;
+      }
+
+      .footer-logo {
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      .footer-brand-name {
+        color: #00aaff;
+        font-size: 24px;
+        font-weight: 700;
+        font-family: "Underdog", system-ui;
+      }
+
+      .footer-tagline {
+        color: #b2bec3;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icon {
+        color: #b2bec3;
+        font-size: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        color: #00aaff;
+        transform: translateY(-3px);
+      }
+
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 30px;
+      }
+
+      .links-column h4 {
+        color: #00aaff;
+        margin-bottom: 20px;
+        font-size: 18px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .links-column h4::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background: #00aaff;
+      }
+
+      .links-column ul {
+        list-style: none;
+      }
+
+      .links-column li {
+        margin-bottom: 12px;
+      }
+
+      .links-column a {
+        color: #b2bec3;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .links-column a:hover {
+        color: #00aaff;
+        padding-left: 5px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #3d4a52;
+        padding-top: 20px;
+        text-align: center;
+        color: #b2bec3;
+        font-size: 14px;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .contact-container {
+          gap: 30px;
+        }
+        
+        .contact-info h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 12px 3%;
+        }
+        
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background-color: #ffffff;
+          position: absolute;
+          top: 84px;
+          left: 0;
+          padding: 15px 0;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-links li {
+          margin: 8px 0;
+          text-align: center;
+          margin-left: 0;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .dropdown-menu {
+          position: static;
+          background-color: #f8f9fa;
+          box-shadow: none;
+          display: none;
+          width: 100%;
+        }
+
+        .dropdown:hover .dropdown-menu {
+          display: none;
+        }
+
+        .dropdown.open .dropdown-menu {
+          display: flex;
+        }
+
+        .contact-section {
+          padding: 50px 0;
+        }
+        
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+        
+        .contact-info {
+          padding: 20px;
+        }
+
+        #thankYouMessage {
+          padding: 25px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .logo {
+          height: 50px;
+        }
+        
+        .brand-name {
+          font-size: 24px;
+        }
+        
+        .menu-toggle {
+          font-size: 24px;
+        }
+        
+        .contact-form {
+          padding: 25px;
+        }
+
+        #thankYouMessage h3 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body> 
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="brand">
+        <a href="index.html">
+          <img src="img/sy.jpg" alt="Logo" class="logo" />
+          <span class="brand-name">SYNTAX SCHOOL</span>
+        </a>
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Have questions or want to enroll in our courses? Reach out to us and our team will get back to you promptly.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Our Location</h4>
+                <p>Capital Highstreet, Mahal Road jaipur</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email Us</h4>
+                <a href="mailto:syntaxschool1@gmail.com">syntaxschool1@gmail.com</a> 
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Call Us</h4>
+                <a href="tel:+918077799237">+91 8077799237</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.367269094929!2d75.7849263150446!3d26.92378308312381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db14b1bd30ba5%3A0x860e5d4e8a9e217a!2sCapital%20High%20Street%2C%20Mahal%20Road%2C%20Jaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+        </div>
+        
+        <div class="contact-form">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm" action="https://formspree.io/f/mqapnolb" method="POST">
+            <input type="hidden" name="_replyto" value="syntaxschool1@gmail.com"> 
+            
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="course">Interested Course</label>
+              <select id="course" name="course" class="form-control">
+                <option value="">Select a course</option>
+                <option value="web">Web Development</option>
+                <option value="python">Python Programming</option>
+                <option value="ai">AI/ML Engineering</option>
+                <option value="data">Data Science</option>
+                <option value="c">C Programming</option>
+                <option value="cpp">C++ Programming</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" class="form-control" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+          
+          <!-- Thank You Message -->
+          <div id="thankYouMessage">
+            <h3>Thank You!</h3>
+            <p>Your message has been sent successfully. We'll get back to you soon.</p>
+            <p>Submitted Details:</p>
+            <div id="submittedData"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo-link">
+              <img src="img/sy.jpg" alt="Syntax School Logo" class="footer-logo">
+              <span class="footer-brand-name">SYNTAX SCHOOL</span>
+            </a>
+            <p class="footer-tagline">Master the language of programming</p>
+            <div class="footer-social">
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          
+          <div class="footer-links">
+            <div class="links-column">
+              <h4 class="links-heading">Courses</h4>
+              <ul>
+                <li><a href="web.html">Web Development</a></li>
+                <li><a href="python.html">Python Programming</a></li>
+                <li><a href="ai.html">AI/ML Engineering</a></li>
+                <li><a href="data.html">Data Science</a></li>
+              </ul>
+            </div>
+            
+            <div class="links-column">
+              <h4 class="links-heading">Resources</h4>
+              <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
+            
+            <div class="links-column">
+              <h4 class="links-heading">Support</h4>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Refund Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2023 SYNTAX SCHOOL. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile menu toggle
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('nav-links').classList.toggle('active');
+      });
+
+      // Form submission handling
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const formDataObj = Object.fromEntries(formData.entries());
+        
+        // Submit form using Fetch API
+        fetch(this.action, {
+          method: 'POST',
+          body: new URLSearchParams(formData),
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(response => {
+          if (response.ok) {
+            // Show submitted data
+            let submittedHTML = '<ul>';
+            for (const [key, value] of Object.entries(formDataObj)) {
+              if (value && key !== '_replyto' && key !== '_cc') {
+                submittedHTML += `<li><strong>${key}:</strong> ${value}</li>`;
+              }
+            }
+            submittedHTML += '</ul>';
+            
+            document.getElementById('submittedData').innerHTML = submittedHTML;
+            
+            // Hide form, show thank you message
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+            
+            // Scroll to thank you message
+            document.getElementById('thankYouMessage').scrollIntoView({ behavior: 'smooth' });
+            
+            // Reset form
+            this.reset();
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('There was a problem submitting your form. Please try again.');
+        });
+      });
+    </script>
+  </body>
+</html>

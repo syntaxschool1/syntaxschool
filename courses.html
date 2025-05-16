@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syntax School</title>
+  <link href="img/sy.jpg" rel="icon" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Underdog&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #2d3436;
+      background-color: #f5f6fa;
+      padding-top: 90px;
+    }
+
+    :root {
+      --primary: #6c5ce7;
+      --secondary: #a29bfe;
+      --accent: #fd79a8;
+      --dark: #2d3436;
+      --light: #f5f6fa;
+      --success: #00b894;
+      --warning: #fdcb6e;
+      --danger: #d63031;
+      --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(108, 92, 231, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Navbar (unchanged as requested) */
+    .navbar {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 5%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      height: 84px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand a {
+      display: flex;  
+      align-items: center; 
+      text-decoration: none;  
+    }
+
+    .logo {
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    .brand-name {
+      white-space: nowrap;  
+      color: #00aaff;
+      font-size: 29px;
+      font-weight: 800;
+      transition: all 0.3s ease;
+      font-family: "Underdog", system-ui;
+    }
+
+    .brand-name:hover {
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    nav a.active {
+      background-color: #00aaff;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-left: 25px;
+      position: relative;
+    }
+
+    .nav-links a {
+      color: #039ae5;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 12px;
+      position: relative;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .nav-links a:hover {
+      background-color: #00aaff;
+      color: white;
+      border-radius: 10px;    
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: #00aaff;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      flex-direction: column;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      z-index: 1000;
+      min-width: 200px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
+    .dropdown-menu li a {
+      padding: 10px 20px;
+      color: #333;
+      background-color: #fff;
+      display: block;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #00aaff;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg,
+          rgba(108, 92, 231, 0.9),
+          rgba(162, 155, 254, 0.9)),
+        url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") center/cover;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: var(--light);
+      clip-path: polygon(0 70%, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    /* Courses Section */
+    .courses {
+      background: var(--light);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right,
+          var(--primary),
+          var(--accent));
+      border-radius: 2px;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .course-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .course-img {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .course-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--accent);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .course-content {
+      padding: 25px;
+    }
+
+    .course-content h3 {
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .course-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .course-price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .course-duration {
+      display: flex;
+      align-items: center;
+      color: #636e72;
+    }
+
+    .course-duration i {
+      margin-right: 5px;
+      color: var(--primary);
+    }
+
+    .course-features {
+      margin: 20px 0;
+    }
+
+    .course-features li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+      list-style: none;
+    }
+
+    .course-features li i {
+      position: absolute;
+      left: 0;
+      top: 3px;
+      color: var(--primary);
+    }
+
+    .course-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .course-actions .btn {
+      flex: 1;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+
+
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .hero {
+        padding: 80px 0;
+      }
+
+      .course-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 50px 0;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero::after {
+        height: 60px;
+        bottom: -30px;
+      }
+
+      .contact::before {
+        height: 60px;
+        top: -30px;
+      }
+
+      .course-actions {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffffff;
+        position: absolute;
+        top: 84px;
+        left: 0;
+        padding: 15px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 8px 0;
+        text-align: center;
+        margin-left: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .dropdown-menu {
+        position: static;
+        background-color: #f8f9fa;
+        box-shadow: none;
+        display: none;
+        width: 100%;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: none;
+      }
+
+      .dropdown.open .dropdown-menu {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .btn {
+        padding: 10px 20px;
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .offer-badge {
+        right: -40px;
+        padding: 5px 50px;
+      }
+
+      .logo {
+        height: 50px;
+      }
+      
+      .brand-name {
+        font-size: 24px;
+      }
+      
+      .menu-toggle {
+        font-size: 24px;
+      }
+    }
+
+    /* Contact Section */
+    .contact {
+      background: linear-gradient(135deg, #2d3436, #636e72);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: var(--light);
+      clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%);
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      align-items: center;
+    }
+
+    .contact-info h2 {
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .contact-details {
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .contact-text h4 {
+      margin-bottom: 5px;
+    }
+
+    .contact-text a {
+      color: var(--secondary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-text a:hover {
+      color: white;
+    }
+
+    .offer-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      color: var(--dark);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-badge {
+      position: absolute;
+      top: 20px;
+      right: -30px;
+      background: var(--danger);
+      color: white;
+      padding: 5px 40px;
+      transform: rotate(45deg);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .offer-card h3 {
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .offer-list {
+      margin-bottom: 20px;
+    }
+
+    .offer-list li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+      list-style: none;
+    }
+
+    .offer-list li i {
+      position: absolute;
+      left: 0;
+      top: 3px;
+      color: var(--success);
+    }
+
+
+    .site-footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 50px 20px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .footer-brand-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            font-family: 'Underdog', system-ui;
+        }
+
+        .footer-tagline {
+            color: #b2bec3;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            color: #ffffff;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: #00aaff;
+            transform: translateY(-3px);
+        }
+
+        .footer-contact {
+            margin-top: 15px;
+        }
+
+        .footer-contact a {
+            display: block;
+            margin-bottom: 10px;
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            word-break: break-word;
+        }
+
+        .footer-contact a:hover {
+            color: #00aaff;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+        }
+
+        .links-column {
+            min-width: 150px;
+        }
+
+        .links-heading {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .links-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: #00aaff;
+        }
+
+        .links-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .links-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .links-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .links-column ul li a:hover {
+            color: #00aaff;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        .footer-bottom a {
+            color: #bbb;
+            text-decoration: none;
+            margin: 0 5px;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom a:hover {
+            color: #00aaff;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .footer-grid {
+                gap: 30px;
+            }
+            
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-logo {
+                width: 40px;
+            }
+
+            .footer-brand-name {
+                font-size: 1.3rem;
+            }
+
+            .footer-social a {
+                font-size: 1.2rem;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+
+            .links-heading {
+                font-size: 1rem;
+            }
+
+            .links-column ul li a {
+                font-size: 0.9rem;
+            }
+
+            .footer-bottom {
+                font-size: 0.8rem;
+            }
+        }
+
+
+</style>
+</head>
+
+<body> 
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="brand">
+          <a href="index.html">
+            <img src="img/sy.jpg" alt="Logo" class="logo" />
+            <span class="brand-name">SYNTAX SCHOOL</span>
+          </a>
+        </div>
+  
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html" class="active">Courses</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Master In-Demand Tech Skills</h1>
+        <p>
+          Get ahead of your competitors with our industry-ready curriculum
+          and expert mentorship programs
+        </p>
+        <a href="#courses" class="btn btn-primary">Explore Courses</a>
+      </div>
+    </div>
+  </header>
+ 
+  <!-- Courses Section -->
+  <section id="courses" class="courses">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Courses</h2>
+        <p>Choose from our carefully designed curriculum to boost your career</p>
+      </div>
+
+      <div class="course-grid">
+        <!-- AI/ML -->
+        <div class="course-card">
+          <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+            <span class="course-badge">Advanced</span>
+          </div>
+          <div class="course-content">
+            <h3>AI/ML Engineering</h3>
+            <p>Master artificial intelligence and machine learning algorithms</p>
+
+            <div class="course-meta">
+              <div class="course-price">₹8,999/-</div>
+              <div class="course-duration"><i class="far fa-clock"></i> 10 Weeks</div>
+            </div>
+
+            <ul class="course-features">
+              <li><i class="fas fa-check"></i> Maths</li>
+              <li><i class="fas fa-check"></i> Data Analysis</li>
+              <li><i class="fas fa-check"></i> Machine Learning</li>
+              <li><i class="fas fa-check"></i> Deep Learning</li>
+              <li><i class="fas fa-check"></i> Projects</li>
+              <li><i class="fas fa-check"></i> Certification</li>
+            </ul>
+
+            <div class="course-actions">
+              <a href="register.html" class="btn btn-primary">Enroll Now</a>
+              <a href="#" class="btn btn-outline">Course Contents</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Science -->
+        <div class="course-card">
+          <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+            <span class="course-badge">Trending</span>
+          </div>
+          <div class="course-content">
+            <h3>Data Science</h3>
+            <p>Become proficient in data analysis, visualization, and machine learning</p>
+
+            <div class="course-meta">
+              <div class="course-price">₹8,999/-</div>
+              <div class="course-duration"><i class="far fa-clock"></i> 10 Weeks</div>
+            </div>
+
+            <ul class="course-features">
+              <li><i class="fas fa-check"></i> Python</li>
+              <li><i class="fas fa-check"></i> Power BI/Tableau</li>
+              <li><i class="fas fa-check"></i> ML Algorithms</li>
+              <li><i class="fas fa-check"></i> Projects</li>
+              <li><i class="fas fa-check"></i> Certification</li>
+            </ul>
+
+            <div class="course-actions">
+              <a href="register.html" class="btn btn-primary">Enroll Now</a>
+              <a href="#" class="btn btn-outline">Course Contents</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Python -->
+        <div class="course-card">
+          <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+            <span class="course-badge">Bestseller</span>
+          </div>
+          <div class="course-content">
+            <h3>Python Programming</h3>
+            <p>Versatile language for web development, data science, and automation</p>
+
+            <div class="course-meta">
+              <div class="course-price">₹5,999/-</div>
+              <div class="course-duration"><i class="far fa-clock"></i> 6 Weeks</div>
+            </div>
+
+            <ul class="course-features">
+              <li><i class="fas fa-check"></i> Basic to Advanced Level</li>
+              <li><i class="fas fa-check"></i> Visualization</li>
+              <li><i class="fas fa-check"></i> 30+ Projects</li>
+              <li><i class="fas fa-check"></i> Certification</li>
+            </ul>
+
+            <div class="course-actions">
+              <a href="register.html" class="btn btn-primary">Enroll Now</a>
+              <a href="#" class="btn btn-outline">Course Contents</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- C Programming -->
+        <div class="course-card">
+          <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1566837945700-30057527ade0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+            <span class="course-badge">Foundation</span>
+          </div>
+          <div class="course-content">
+            <h3>C Programming</h3>
+            <p>Master the fundamentals of procedural programming and system development</p>
+
+            <div class="course-meta">
+              <div class="course-price">₹4,999/-</div>
+              <div class="course-duration"><i class="far fa-clock"></i> 6 Weeks</div>
+            </div>
+
+            <ul class="course-features">
+              <li><i class="fas fa-check"></i> 40+ Hands-on exercises</li>
+              <li><i class="fas fa-check"></i> Live Projects</li>
+              <li><i class="fas fa-check"></i> Certification</li>
+            </ul>
+
+            <div class="course-actions">
+              <a href="register.html" class="btn btn-primary">Enroll Now</a>
+              <a href="#" class="btn btn-outline">Course Contents</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- C++ Programming -->
+        <div class="course-card">
+          <div class="course-img" style="background-image: url('https://commongroundnews.org/wp-content/uploads/2023/08/C.jpg');">
+            <span class="course-badge">OOP</span>
+          </div>
+          <div class="course-content">
+            <h3>C++ Programming</h3>
+            <p>Learn object-oriented programming with industry-standard practices</p>
+
+            <div class="course-meta">
+              <div class="course-price">₹5,999/-</div>
+              <div class="course-duration"><i class="far fa-clock"></i> 8 Weeks</div>
+            </div>
+
+            <ul class="course-features">
+              <li><i class="fas fa-check"></i> Basics to Advanced</li>
+              <li><i class="fas fa-check"></i> STC</li>
+              <li><i class="fas fa-check"></i> 30+ Projects</li>
+              <li><i class="fas fa-check"></i> Certification</li>
+            </ul>
+
+            <div class="course-actions">
+              <a href="register.html" class="btn btn-primary">Enroll Now</a>
+              <a href="#" class="btn btn-outline">Course Contents</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fullstack Development -->
+        <div class="course-card">
+          <div class="course-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+            <span class="course-badge">Hot</span>
+          </div>
+          <div class="course-content">
+            <h3>Fullstack Development</h3>
+            <p>Master both frontend and backend development with modern technologies</p>
+
+            <div class="course-meta">
+              <div class="course-price">₹14,999/-</div>
+              <div class="course-duration"><i class="far fa-clock"></i> 14 Weeks</div>
+            </div>
+
+            <ul class="course-features">
+              <li><i class="fas fa-check"></i> HTML, CSS & JavaScript</li>
+              <li><i class="fas fa-check"></i> Node.js, Express.js</li>
+              <li><i class="fas fa-check"></i> Git, GitHub, Hosting Platforms</li>
+              <li><i class="fas fa-check"></i> Live Projects</li>
+              <li><i class="fas fa-check"></i> Certification</li>
+            </ul>
+
+            <div class="course-actions">
+              <a href="register.html" class="btn btn-primary">Enroll Now</a>
+              <a href="web.html" class="btn btn-outline">Course Contents</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="container">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2>Ready to Start Your Tech Journey?</h2>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Call Us</h4>
+                <a href="tel:+918077799237">+91 8077799237</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Visit Us</h4>
+                <p>F-11, Second floor, Capital Highstreet, Mahal Road</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email Us</h4>
+                <a href="mailto:info@syntaxschool.com">info@syntaxschool.com</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary">Book Free Consultation</a>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-badge">Limited Time</div>
+          <h3>Special Offers</h3>
+          <p>Don't miss these exclusive deals for aspiring developers:</p>
+
+          <ul class="offer-list">
+            <li>
+              <i class="fas fa-gift"></i> 9% discount on any two courses
+            </li>
+            <li><i class="fas fa-gift"></i> Free placement assistance</li>
+            <li><i class="fas fa-gift"></i> Free 1-month internship</li>
+            <li>
+              <i class="fas fa-gift"></i> Free career counseling session
+            </li>
+          </ul>
+
+          <a href="Contact.html" class="btn btn-outline">Claim Your Offer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      
+      <!-- Brand & Contact -->
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo-link">
+          <img src="img/sy.png" alt="Syntax School Logo" class="footer-logo">
+          <span class="footer-brand-name">SYNTAX SCHOOL</span>
+        </a>
+
+        <div class="footer-social">
+          <a href="https://www.instagram.com/_syntax_school_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+            <i class="fa-brands fa-square-instagram"></i>
+          </a>
+          <a href="#" target="_blank">
+            <i class="fa-brands fa-linkedin" style="color: #286ce2"></i>
+          </a>
+        </div>
+
+        <div class="footer-contact">
+          <a href="mailto:syntaxschool1@gmail.com">📧 syntaxschool1@gmail.com</a>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="footer-links">
+        <div class="links-column">
+          <h4 class="links-heading">Learn</h4>
+          <ul>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Challenges</a></li>
+          </ul>
+        </div>
+        <div class="links-column">
+          <h4 class="links-heading">Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Careers</a></li>
+            <li><a href="index.html">Testimonials</a></li>
+            <li><a href="about.html">Partners</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 SYNTAX SCHOOL. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle navigation menu for smaller screens
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
