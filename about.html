@@ -50,104 +50,127 @@ body::before {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
-
-/* Navbar Styles */
+/* Navbar (unchanged as requested) */
 .navbar {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 5%;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    height: 84px;
-}
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 5%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      height: 84px;
+    }
 
-.brand {
-    display: flex;
-    align-items: center;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+    }
 
-.brand a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
+    .brand a {
+      display: flex;  
+      align-items: center; 
+      text-decoration: none;  
+    }
 
-.logo {
-    height: 60px;
-    margin-right: 15px;
-}
+    .logo {
+      height: 60px;
+      margin-right: 15px;
+    }
 
-.brand-name {
-    white-space: nowrap;
-    color: #00aaff;
-    font-size: 29px;
-    font-weight: 800;
-    transition: all 0.3s ease;
-    font-family: "Underdog", system-ui;
-}
+    .brand-name {
+      white-space: nowrap;  
+      color: #00aaff;
+      font-size: 29px;
+      font-weight: 800;
+      transition: all 0.3s ease;
+      font-family: "Underdog", system-ui;
+    }
 
-.brand-name:hover {
-    color: #000;
-    transform: scale(1.05);
-}
+    .brand-name:hover {
+      color: #000;
+      transform: scale(1.05);
+    }
 
-nav a.active {
-    background-color: #00aaff;
-    color: white;
-    border-radius: 10px;
-}
+    nav a.active {
+      background-color: #00aaff;
+      color: white;
+      border-radius: 10px;
+    }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    transition: all 0.3s ease;
-}
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-.nav-links li {
-    margin-left: 25px;
-    position: relative;
-}
+    .nav-links li {
+      margin-left: 25px;
+      position: relative;
+    }
 
-.nav-links a {
-    color: #039ae5;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 12px;
-    position: relative;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-}
+    .nav-links a {
+      color: #039ae5;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 12px;
+      position: relative;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+    }
 
-.nav-links a:hover {
-    background-color: #00aaff;
-    color: white;
-    border-radius: 10px;
-}
+    .nav-links a:hover {
+      background-color: #00aaff;
+      color: white;
+      border-radius: 10px;    
+    }
 
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    color: #00aaff;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-}
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: #00aaff;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
 
-.menu-icon {
-    display: inline-block;
-}
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      flex-direction: column;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      z-index: 1000;
+      min-width: 200px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
+    .dropdown-menu li a {
+      padding: 10px 20px;
+      color: #333;
+      background-color: #fff;
+      display: block;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #00aaff;
+      color: #fff;
+    }
 
 /* About School Section */
 .about-school {
@@ -241,6 +264,28 @@ nav a.active {
     width: 50px;
     height: 3px;
     background: #00aaff;
+}
+
+.founder-quotes {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.founder-quotes blockquote {
+    font-style: italic;
+    color: #555;
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    border-left: 3px solid #0077b5;
+}
+
+.founder-quotes cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-weight: bold;
+    color: #333;
 }
 
 /* Team Section */
@@ -361,7 +406,7 @@ nav a.active {
     display: flex;
     align-items: center;
     min-height: 100vh;
-    padding: 100px 0;
+    padding: 100px 20px;
     position: relative;
     overflow: hidden;
 }
@@ -382,12 +427,15 @@ nav a.active {
     align-items: center;
     gap: 60px;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .founder-image {
     flex: 1;
     min-width: 350px;
     position: relative;
+    text-align: center;
 }
 
 .founder-image img {
@@ -406,13 +454,15 @@ nav a.active {
 .founder-badge {
     position: absolute;
     bottom: -20px;
-    right: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     background: var(--primary);
     color: white;
     padding: 15px 25px;
     border-radius: 50px;
     font-weight: bold;
     box-shadow: 0 10px 30px rgba(0,170,255,0.3);
+    white-space: nowrap;
 }
 
 .founder-details {
@@ -430,7 +480,7 @@ nav a.active {
     font-size: 1.5rem;
     color: var(--primary);
     font-weight: 600;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
 .founder-header p.subtitle {
@@ -480,34 +530,6 @@ nav a.active {
     color: #666;
 }
 
-.founder-skills {
-    margin-bottom: 40px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.skill-item {
-    background: white;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    font-weight: 500;
-    color: var(--dark);
-    transition: all 0.3s ease;
-}
-
-.skill-item:hover {
-    background: var(--primary);
-    color: white;
-    transform: translateY(-3px);
-}
-
 .founder-cta {
     display: flex;
     gap: 20px;
@@ -548,129 +570,18 @@ nav a.active {
     transform: translateY(-3px);
 }
 
-/* Experience Timeline */
-.experience-section {
-    padding: 80px 0;
-    background: white;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-header h2 {
-    font-size: 2.5rem;
-    color: var(--dark);
-    margin-bottom: 15px;
-}
-
-.section-header p {
-    color: #666;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: var(--primary);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 50px;
-    display: flex;
-}
-
-.timeline-item:nth-child(odd) {
-    justify-content: flex-end;
-    padding-right: 30px;
-}
-
-.timeline-item:nth-child(even) {
-    justify-content: flex-start;
-    padding-left: 30px;
-}
-
-.timeline-content {
-    width: calc(50% - 40px);
-    padding: 30px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    position: relative;
-}
-
-.timeline-content::before {
-    content: '';
-    position: absolute;
-    top: 30px;
-    width: 20px;
-    height: 20px;
-    background: var(--primary);
-    border-radius: 50%;
-}
-
-.timeline-item:nth-child(odd) .timeline-content::before {
-    left: -10px;
-}
-
-.timeline-item:nth-child(even) .timeline-content::before {
-    right: -10px;
-}
-
-.timeline-date {
-    position: absolute;
-    top: 20px;
-    font-weight: 600;
-    color: var(--primary);
-}
-
-.timeline-item:nth-child(odd) .timeline-date {
-    right: calc(50% + 60px);
-}
-
-.timeline-item:nth-child(even) .timeline-date {
-    left: calc(50% + 60px);
-}
-
-.timeline-content h3 {
-    margin-bottom: 10px;
-    color: var(--dark);
-}
-
-.timeline-content p.company {
-    color: var(--primary);
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-/* Footer Styles */
+/* New Footer Styles */
 .site-footer {
     background: linear-gradient(135deg, #1a1a2e, #16213e);
     color: #ffffff;
-    padding: 70px 20px 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 70px 0 30px;
     position: relative;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
+    padding: 0 20px;
 }
 
 .footer-grid {
@@ -693,15 +604,14 @@ nav a.active {
 }
 
 .footer-logo {
-    width: 60px;
-    height: auto;
+    height: 60px;
     margin-right: 15px;
 }
 
 .footer-brand-name {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #ffffff;
+    color: #00aaff;
     font-family: 'Underdog', system-ui;
 }
 
@@ -714,7 +624,7 @@ nav a.active {
 
 .footer-social {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     margin-bottom: 25px;
 }
 
@@ -764,7 +674,7 @@ nav a.active {
 .footer-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
 
 .links-column {
@@ -913,39 +823,30 @@ nav a.active {
         margin: 15px 0;
     }
     
-    .timeline::before {
-        left: 30px;
-    }
-    
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-        justify-content: flex-start;
-        padding-left: 60px;
-        padding-right: 0;
-    }
-    
-    .timeline-content {
-        width: 100%;
-    }
-    
-    .timeline-item:nth-child(odd) .timeline-content::before,
-    .timeline-item:nth-child(even) .timeline-content::before {
-        left: -40px;
-    }
-    
-    .timeline-item:nth-child(odd) .timeline-date,
-    .timeline-item:nth-child(even) .timeline-date {
-        left: 0;
-        right: auto;
-        top: -25px;
-    }
-    
     .footer-grid {
         gap: 40px;
     }
     
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .founder-hero {
+        padding: 80px 20px;
+    }
+    
+    .founder-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .founder-badge {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .founder-cta {
+        justify-content: center;
     }
 }
 
@@ -971,7 +872,7 @@ nav a.active {
     }
     
     .footer-logo {
-        width: 50px;
+        height: 50px;
     }
     
     .links-heading {
@@ -980,14 +881,6 @@ nav a.active {
     
     .footer-links {
         grid-template-columns: 1fr;
-    }
-    
-    .founder-content {
-        padding: 20px;
-    }
-    
-    .founder-image, .founder-details {
-        min-width: 100%;
     }
     
     .founder-header h1 {
@@ -1003,37 +896,49 @@ nav a.active {
         padding: 10px 15px;
     }
     
-    .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-    
     .cta-button {
         padding: 12px 20px;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .founder-badge {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .footer-social a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .footer-contact a {
         font-size: 0.9rem;
     }
 }
   </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="brand">
-            <a href="index.html">
-                <img src="img/sy.jpg" alt="Syntax School Logo" class="logo">
-                <span class="brand-name">SYNTAX SCHOOL</span>
-            </a>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <a href="index.html">
+        <img src="img/sy.jpg" alt="Logo" class="logo" />
+        <span class="brand-name">SYNTAX SCHOOL</span>
+      </a>
+    </div>
 
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
-            <span class="menu-icon">&#9776;</span>
-        </button>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html" class="active">Courses</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
 
     <div class="container">
         <!-- About School Section -->
@@ -1068,90 +973,24 @@ nav a.active {
                     <div class="founder-header">
                         <h1>Akash Tomar</h1>
                         <p class="title">Founder & CEO</p>
-                        <p class="subtitle">
-                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                            New York University, USA
-                        </p>
+                        <p class="subtitle"><b>Ms, New York University USA</b></p>
                     </div>
                     
                     <div class="founder-bio">
-                        <p>As an accomplished and results-driven Product Manager, I thrive at the intersection of data, design, and customer experience, turning insights into impactful strategies that fuel business growth.</p>
-                        <p>With expertise in product-led growth, market analysis, and Agile methodologies, I specialize in optimizing user adoption, retention, and revenue expansion.</p>
-                        <p>Currently at CodersData, I lead initiatives that have enhanced product development efficiency by 25% and boosted customer satisfaction by 40%, leveraging data to drive $1.5M+ in business growth.</p>
+                        <blockquote>
+                            "At Syntax School, we help engineering students learn the right skills and find the right path for their careers. Our goal is to guide them step by step toward a brighter future."
+                        </blockquote>
                     </div>
-                    
-                    <div class="founder-stats">
-                        <div class="stat-item">
-                            <div class="number">701</div>
-                            <div class="label">Followers</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="number">500+</div>
-                            <div class="label">Connections</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="number">1.5M+</div>
-                            <div class="label">Revenue Driven</div>
-                        </div>
-                    </div>
-                    
-                     
                     
                     <div class="founder-cta">
                         <a href="#" class="cta-button primary-cta">
                             <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                             Connect on LinkedIn
                         </a>
-                        <a  href="mailto:syntaxschool1@gmail.com" class="cta-button secondary-cta">
+                        <a href="mailto:syntaxschool1@gmail.com" class="cta-button secondary-cta">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                             Send Message
                         </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Experience Section -->
-        <section class="experience-section">
-            <div class="section-header">
-                <h2>Professional Journey</h2>
-                <p>Akash's career path demonstrates consistent growth and impact across technology and business strategy roles</p>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2022 - Present</div>
-                        <h3>Growth Product Manager</h3>
-                        <p class="company">CodersData</p>
-                        <p>Led product initiatives driving $1.5M+ in business growth. Enhanced development efficiency by 25% and customer satisfaction by 40% through data-driven strategies.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2020 - 2022</div>
-                        <h3>Product Strategist</h3>
-                        <p class="company">TechSolutions Inc.</p>
-                        <p>Implemented Agile methodologies that reduced time-to-market by 30%. Spearheaded market research initiatives that identified $500K revenue opportunities.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2018 - 2020</div>
-                        <h3>Business Analyst</h3>
-                        <p class="company">DataInsights LLC</p>
-                        <p>Developed data models that improved decision-making accuracy by 35%. Led cross-functional teams in implementing customer experience improvements.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2016 - 2018</div>
-                        <h3>Master's in Management of Technology</h3>
-                        <p class="company">New York University</p>
-                        <p>Specialized in product innovation and data-driven decision making. Graduated with honors while consulting for tech startups.</p>
                     </div>
                 </div>
             </div>
@@ -1173,7 +1012,7 @@ nav a.active {
                     </div>
                 </div>
                 
-                <!-- Team Member 2 -->
+                <!-- Team Member 4 -->
                 <div class="team-member">
                     <img src="img/p2.jpg" alt="Raghava Sandhu - AI Expert" loading="eager">
                     <h3>Raghava Sandhu</h3>
@@ -1190,20 +1029,15 @@ nav a.active {
     
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="bg-element bg-1"></div>
-        <div class="bg-element bg-2"></div>
-        
         <div class="footer-container">
             <div class="footer-grid">
-                <!-- Brand & Contact -->
                 <div class="footer-brand">
                     <a href="index.html" class="footer-logo-link">
                         <img src="img/sy.jpg" alt="Syntax School Logo" class="footer-logo">
                         <span class="footer-brand-name">SYNTAX SCHOOL</span>
                     </a>
-            
                     <p class="footer-tagline">Master the language of programming with our expert-led courses and hands-on projects.</p>
-            
+                    
                     <div class="footer-social">
                         <a href="https://www.instagram.com/_syntax_school_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
@@ -1218,164 +1052,88 @@ nav a.active {
                             <i class="fab fa-youtube" aria-hidden="true"></i>
                         </a>
                     </div>
-            
+                    
                     <div class="footer-contact">
                         <a href="mailto:syntaxschool1@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> syntaxschool1@gmail.com</a>
-                        <a href="tel:+918826109871"><i class="fas fa-phone-alt" aria-hidden="true"></i> +91 8826109871</a>
-                        <a href="#"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> R-Tech Capital Highstreet, Mahal Road jagatpura jaipur</a>
+                        <a href="tel:+918826109871"><i class="fas fa-phone-alt" aria-hidden="true"></i> +91 8826109871</a> 
                     </div>
                 </div>
-            
-                <!-- Navigation Links -->
+                
                 <div class="footer-links">
                     <div class="links-column">
                         <h4 class="links-heading">Learn</h4>
                         <ul>
                             <li><a href="courses.html">Courses</a></li>
                             <li><a href="#">Tutorials</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Challenges</a></li>
+                            <li><a href="#">Projects</a></li> 
                         </ul>
                     </div>
+                    
                     <div class="links-column">
                         <h4 class="links-heading">Resources</h4>
                         <ul>
                             <li><a href="#">Documentation</a></li>
                             <li><a href="#">Cheatsheets</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Photo</a></li> 
                         </ul>
                     </div>
+                    
                     <div class="links-column">
                         <h4 class="links-heading">Company</h4>
                         <ul>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Partners</a></li>
+                             <li><a href="">Partners</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <p>&copy; 2025 SYNTAX SCHOOL. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
- <script>
+    
+    <script>
+
+        
     document.addEventListener('DOMContentLoaded', function() {
-    // Toggle navigation menu for mobile
-    const toggle = document.getElementById("menu-toggle");
-    const nav = document.getElementById("nav-links");
-    
-    toggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-        toggle.classList.toggle("active");
-    });
-    
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove("active");
-            toggle.classList.remove("active");
+        // Toggle navigation menu for mobile
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("nav-links");
+        
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            toggle.classList.toggle("active");
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove("active");
+                toggle.classList.remove("active");
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     });
-    
-    // Typing effect for hero text (if needed)
-    const phrases = [
-        "Transform Your Skills and Rise to the Top Developer in Tech.",
-        "Build Real Projects. Grow Real Skills.",
-        "Master Programming. Lead the Future.",
-        "Code Your Dreams into Reality.",
-        "From Beginner to Pro – We've Got You Covered.",
-    ];
-    
-    let i = 0,
-        j = 0;
-    let currentPhrase = [];
-    let isDeleting = false;
-    
-    function loop() {
-        const textElement = document.getElementById("changing-text");
-        
-        if (!textElement) return;
-        
-        // Typing the phrase
-        if (!isDeleting && j <= phrases[i].length) {
-            currentPhrase.push(phrases[i][j]);
-            j++;
-        }
-        
-        // Deleting the phrase
-        if (isDeleting && j >= 0) {
-            currentPhrase.pop();
-            j--;
-        }
-        
-        // Show the current text
-        textElement.innerHTML = currentPhrase.join("");
-        
-        // Add fade animation effect
-        textElement.classList.add("fade-in");
-        setTimeout(() => textElement.classList.remove("fade-in"), 300);
-        
-        // Wait before starting deletion
-        if (!isDeleting && j === phrases[i].length) {
-            isDeleting = true;
-            setTimeout(loop, 2000);
-            return;
-        }
-        
-        // Move to the next phrase after deleting
-        if (isDeleting && j === 0) {
-            isDeleting = false;
-            i = (i + 1) % phrases.length;
-        }
-        
-        // Recursive call with typing speed
-        setTimeout(loop, isDeleting ? 40 : 100);
-    }
-    
-    // Start the typewriter loop if element exists
-    if (document.getElementById("changing-text")) {
-        loop();
-    }
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Lazy loading for images
-    if ('loading' in HTMLImageElement.prototype) {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-            img.src = img.dataset.src;
-        });
-    } else {
-        // Fallback for browsers that don't support lazy loading
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-        script.async = true;
-        document.body.appendChild(script);
-    }
-});
- </script>
+    </script>
 </body>
 </html>
