@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Syntax School</title>
@@ -1453,12 +1451,12 @@
 
     <!-- Marquee Section -->
     <div class="marquee">
-      <span>   
-      <pre>
-        <strong>🚀 AI/ML Batch:</strong> Start from <b>28th May 2025</b>                                                                                                 <strong>🚀 Python, C++ & DSA using C++:</strong> New batches begin from <b>1st June 2025</b>                                                 
-      </pre>
-        </span>
+      <span
+        > <pre>🎓 AL/ML Batch Will Start From 28 May  2025 🚀                                                            Python,c++ & DSA Using C++ Batches shall Start From 1 Jun 2025 🚀 </pre>
+        </span
+      >
     </div>
+ 
  
 
     <!-- Success Stats Section -->
@@ -1653,13 +1651,31 @@
             responsive!
           </p>
           <div class="student">
-            <img src="img/mitalee.jpg" alt="mitalee" />
+            <!-- Image ko background-image ki tarah use karo -->
+            <div class="student-img" style="background-image: url('img/mitalee.jpg');"></div>
             <div class="student-info">
-              <h4>mitalee</h4>
+              <h4>mitalee Raj</h4>
               <span>Python Programming</span>
             </div>
           </div>
         </div>
+        
+        <style>
+          .student-img {
+            width: 50px;       /* Adjust size as needed */
+            height: 50px;
+            border-radius: 50%; /* Circular image */
+            background-size: cover;
+            background-position: center;
+            -webkit-user-drag: none;  /* Prevents dragging */
+            user-select: none;        /* Prevents selection */
+          }
+        </style>
+        
+        <script>
+          // Right-click disable (optional)
+          document.addEventListener('contextmenu', (e) => e.preventDefault());
+        </script>
 
         <div class="testimonial">
           <div class="rating">★★★★★</div>
