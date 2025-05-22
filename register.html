@@ -1,549 +1,995 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form | Syntax School</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syntax School courses</title>
+  
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Syntax School - Learn Web Development, Python, AI & Data Science with live projects and placement assistance" />
+    <meta name="keywords" content="Syntax School, web development, learn coding, Python, AI, Data Science, coding bootcamp, placement, programming" />
+    <meta name="author" content="Syntax School" />
+  
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="rdV0a-jIriQO0FFvOxnc6J7hakBYeUEg5ehf0Roosuw" />
+  
+    <!-- Open Graph for Facebook / WhatsApp -->
+    <meta property="og:title" content="Syntax School - Learn Web Dev, Python & AI" />
+    <meta property="og:description" content="Live projects, full stack development, and placement support. Join Syntax School now!" />
+    <meta property="og:image" content="https://syntaxschool.in/img/sy.jpg" />
+    <meta property="og:url" content="https://syntaxschool.in/" />
+    <meta property="og:type" content="website" />
+  
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Syntax School - Learn Web Dev, Python & AI" />
+    <meta name="twitter:description" content="Join Syntax School for full stack development and data science with projects and placement support." />
+    <meta name="twitter:image" content="https://syntaxschool.in/img/sy.jpg" />
+  
+    <!-- Favicon -->
+    <link href="img/sy.jpg" rel="icon" />
+  
+    <!-- Fonts and Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Underdog&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+         * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            padding-top: 84px; /* Space for fixed navbar */
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        /* Navbar Styles */
+      body {
+        font-family: "Arial", sans-serif;
+        padding-top: 0;
+      }
+
+      /* Fixed Navbar */
+      .navbar {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 5%;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        height: 84px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+      }
+
+      .brand a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .logo {
+        height: 60px;
+        margin-right: 15px;
+      }
+
+      .brand-name {
+        white-space: nowrap;
+        color: #00aaff;
+        font-size: 29px;
+        font-weight: 800;
+        transition: all 0.3s ease;
+        font-family: "Underdog", system-ui;
+      }
+
+      .brand-name:hover {
+        color: #000;
+        transform: scale(1.05);
+      }
+
+      nav a.active {
+        background-color: #00aaff;
+        color: white;
+        border-radius: 10px;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links li {
+        margin-left: 25px;
+        position: relative;
+      }
+
+      .nav-links a {
+        color: #039ae5;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 12px;
+        position: relative;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+      }
+
+      .nav-links a:hover {
+        background-color: #00aaff;
+        color: white;
+        border-radius: 10px;
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 28px;
+        color: #00aaff;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        z-index: 1000;
+        min-width: 200px;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: flex;
+      }
+
+      .dropdown-menu li a {
+        padding: 10px 20px;
+        color: #333;
+        background-color: #fff;
+        display: block;
+      }
+
+      .dropdown-menu li a:hover {
+        background-color: #00aaff;
+        color: #fff;
+      }
+      
+      /* Responsive Styles */
+      @media (max-width: 992px) {
         .navbar {
-            background-color: #ffffff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 5%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 999;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            height: 84px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-        }
-
-        .brand a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo {
-            height: 60px;
-            margin-right: 15px;
-        }
-
-        .brand-name {
-            white-space: nowrap;
-            color: #00aaff;
-            font-size: 29px;
-            font-weight: 800;
-            transition: all 0.3s ease;
-            font-family: 'Underdog', system-ui;
-        }
-
-        .brand-name:hover {
-            color: #000;
-            transform: scale(1.05);
-        }
-
-        nav a.active {
-            background-color: #00aaff;
-            color: white;
-            border-radius: 10px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+          padding: 12px 3%;
         }
 
         .nav-links li {
-            margin-left: 25px;
-            position: relative;
+          margin-left: 15px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-wrap: wrap;
+          padding: 10px 20px;
         }
 
-        .nav-links a {
-            color: #039ae5;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 12px;
-            position: relative;
-            transition: all 0.3s ease;
-            border-radius: 5px;
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background-color: #ffffff;
+          position: absolute;
+          top: 84px;
+          left: 0;
+          padding: 15px 0;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .nav-links a:hover {
-            background-color: #00aaff;
-            color: white;
-            border-radius: 10px;
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-links li {
+          margin: 8px 0;
+          text-align: center;
+          margin-left: 0;
         }
 
         .menu-toggle {
-            display: none;
-            font-size: 28px;
-            color: #00aaff;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
+          display: block;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .logo {
+          height: 50px;
         }
 
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            flex-direction: column;
-            background-color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            z-index: 1000;
-            min-width: 200px;
+        .brand-name {
+          font-size: 24px;
         }
 
-        .dropdown:hover .dropdown-menu {
-            display: flex;
+        .menu-toggle {
+          font-size: 24px;
+        }
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-top: 100px;
+        padding: 40px 5%;
+      }
+
+      /* Course Registration Form */
+      .form-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .form-header {
+        background-color: #00aaff;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .form-header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .form-header p {
+        font-size: 16px;
+        opacity: 0.9;
+      }
+
+      .form-steps {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+
+      .step {
+        text-align: center;
+        flex: 1;
+        position: relative;
+      }
+
+      .step-number {
+        width: 30px;
+        height: 30px;
+        background-color: #ddd;
+        color: #666;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .step.active .step-number {
+        background-color: #00aaff;
+        color: white;
+      }
+
+      .step.completed .step-number {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      .step-title {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .step.active .step-title {
+        color: #00aaff;
+        font-weight: bold;
+      }
+
+      .step.completed .step-title {
+        color: #4CAF50;
+      }
+
+      .step:not(:last-child):after {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 60%;
+        right: -40%;
+        height: 2px;
+        background-color: #ddd;
+        z-index: 0;
+      }
+
+      .step.completed:not(:last-child):after {
+        background-color: #4CAF50;
+      }
+
+      .form-body {
+        padding: 30px;
+      }
+
+      .form-page {
+        display: none;
+      }
+
+      .form-page.active {
+        display: block;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: #00aaff;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 170, 255, 0.2);
+      }
+
+      .btn {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .btn-primary {
+        background-color: #00aaff;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: #0088cc;
+      }
+
+      .btn-secondary {
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      .btn-secondary:hover {
+        background-color: #e0e0e0;
+      }
+
+      .form-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+
+      .course-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .course-option {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+      }
+
+      .course-option:hover {
+        border-color: #00aaff;
+        box-shadow: 0 5px 15px rgba(0, 170, 255, 0.1);
+      }
+
+      .course-option.selected {
+        border-color: #00aaff;
+        background-color: rgba(0, 170, 255, 0.05);
+      }
+
+      .course-option h3 {
+        color: #00aaff;
+        margin-bottom: 10px;
+      }
+
+      .course-option p {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .course-price {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        font-weight: bold;
+        color: #00aaff;
+        font-size: 18px;
+      }
+
+      .qr-code-container {
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .qr-code {
+        max-width: 200px;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .qr-code img {
+        width: 100%;
+      }
+
+      .confirmation-message {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .confirmation-message i {
+        font-size: 60px;
+        color: #4CAF50;
+        margin-bottom: 20px;
+      }
+
+      .confirmation-message h2 {
+        color: #00aaff;
+        margin-bottom: 15px;
+      }
+
+      .confirmation-message p {
+        color: #666;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      /* File Upload Styles */
+      .file-upload {
+        margin-top: 15px;
+      }
+      .file-upload-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+      }
+      .file-upload-input {
+        width: 100%;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .form-steps {
+          flex-direction: column;
+          gap: 15px;
         }
 
-        .dropdown-menu li a {
-            padding: 10px 20px;
-            color: #333;
-            background-color: #fff;
-            display: block;
+        .step:not(:last-child):after {
+          display: none;
         }
 
-        .dropdown-menu li a:hover {
-            background-color: #00aaff;
-            color: #fff;
+        .course-options {
+          grid-template-columns: 1fr;
         }
+      }
 
-        /* Main Content Styles */
-        .main-content {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+      /* Footer Styles */
+      .site-footer {
+        background-color: #f8f9fa;
+        padding: 40px 0 20px;
+        margin-top: 60px;
+      }
 
-        /* Form Container */
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        h1 {
-            text-align: center;
-            color: #00aaff;
-            margin-bottom: 25px;
-            font-size: 28px;
-        }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
 
-        .form-group {
-            margin-bottom: 20px;
-            position: relative;
-        }
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+      }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #555;
-        }
+      .footer-logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: 20px;
+      }
 
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
+      .footer-logo {
+        height: 50px;
+        margin-right: 10px;
+      }
 
-        input:focus, select:focus, textarea:focus {
-            border-color: #00aaff;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(0, 170, 255, 0.2);
-        }
+      .footer-brand-name {
+        color: #00aaff;
+        font-size: 24px;
+        font-weight: 800;
+        font-family: "Underdog", system-ui;
+      }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"] {
-            height: 45px;
-        }
+      .footer-social {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
 
-        select {
-            height: 45px;
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            background-size: 15px;
-        }
+      .footer-social a {
+        color: #666;
+        font-size: 24px;
+        transition: color 0.3s;
+      }
 
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
+      .footer-social a:hover {
+        color: #00aaff;
+      }
 
-        button {
-            background: #00aaff;
-            color: white;
-            border: none;
-            padding: 14px;
-            width: 100%;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
+      .footer-contact {
+        color: #666;
+        font-size: 14px;
+      }
 
-        button:hover {
-            background: #0088cc;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 30px;
+      }
 
-        .thank-you {
-            display: none;
-            text-align: center;
-            padding: 40px 20px;
-        }
+      .links-column h4 {
+        color: #333;
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
 
-        .thank-you h1 {
-            color: #4CAF50;
-            margin-bottom: 20px;
-        }
+      .links-column ul {
+        list-style: none;
+      }
 
-        .thank-you p {
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: #555;
-        }
+      .links-column li {
+        margin-bottom: 10px;
+      }
 
-        .required-field::after {
-            content: " *";
-            color: red;
-        }
+      .links-column a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
 
-        .error-message {
-            color: red;
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
-        }
+      .links-column a:hover {
+        color: #00aaff;
+      }
 
-        /* Country code selector */
-        .phone-input {
-            display: flex;
-            align-items: center;
-        }
+      .footer-bottom {
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+        text-align: center;
+        color: #666;
+        font-size: 14px;
+      }
 
-        .country-code {
-            width: 80px;
-            margin-right: 10px;
-        }
+      .footer-bottom a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
 
-        .phone-number {
-            flex: 1;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 12px 20px;
-            }
-            
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 84px;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 10px 0;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .container {
-                padding: 20px;
-                margin: 20px;
-            }
-            
-            .phone-input {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .country-code {
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
+      .footer-bottom a:hover {
+        color: #00aaff;
+      }
     </style>
-</head>
+  </head>
 <body>
+    
     <!-- Navbar -->
     <nav class="navbar">
         <div class="brand">
-            <a href="index.html">
-                <img src="img/sy.jpg" alt="Logo" class="logo" />
-                <span class="brand-name">SYNTAX SCHOOL</span>
-            </a>
+          <a href="index.html">
+            <img src="img/sy.jpg" alt="Logo" class="logo" />
+            <span class="brand-name">SYNTAX SCHOOL</span>
+          </a>
         </div>
-
-        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
         <ul class="nav-links" id="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="Contact.html">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html" class="active">Courses</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
         </ul>
-    </nav>
-
-    <div class="main-content">
-        <div class="container" id="form-container">
-            <h1>Register for Course</h1>
-            <form id="myForm" action="https://formsubmit.co/syntaxschool1@gmail.com" method="POST">
-                <!-- FormSubmit Hidden Fields -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="#thank-you">
-                <input type="hidden" name="_subject" value="New Course Registration">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_autoresponse" value="Thank you for registering with Syntax School! We have received your registration and will contact you shortly.">
-
-                <!-- Form Fields -->
+      </nav>
+      
+      <!-- Main Content -->
+      <div class="main-content">
+        <form id="myForm" action="https://formsubmit.co/syntaxschool1@gmail.com" method="POST" enctype="multipart/form-data">
+          <!-- Add hidden fields for FormSubmit -->
+          <input type="hidden" name="_subject" value="New Course Registration">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://syntaxschool.in/thank-you.html">
+          <input type="hidden" name="_captcha" value="false">
+          
+          <div class="form-container">
+            <div class="form-header">
+              <h1>Course Registration</h1>
+              <p>Fill out the form to enroll in your desired course</p>
+            </div>
+            
+            <div class="form-steps">
+              <div class="step active" id="step1">
+                <div class="step-number">1</div>
+                <div class="step-title">Personal Info</div>
+              </div>
+              <div class="step" id="step2">
+                <div class="step-number">2</div>
+                <div class="step-title">Course Selection</div>
+              </div>
+              <div class="step" id="step3">
+                <div class="step-number">3</div>
+                <div class="step-title">Payment</div>
+              </div>
+              <div class="step" id="step4">
+                <div class="step-number">4</div>
+                <div class="step-title">Confirmation</div>
+              </div>
+            </div>
+            
+            <div class="form-body">
+              <!-- Page 1: Personal Information -->
+              <div class="form-page active" id="page1">
                 <div class="form-group">
-                    <label for="name" class="required-field">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                    <div class="error-message" id="name-error">Please enter your full name</div>
+                  <label for="fullname">Full Name</label>
+                  <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Enter your full name" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="email" class="required-field">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="example@email.com">
-                    <div class="error-message" id="email-error">Please enter a valid email address</div>
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="phone" class="required-field">Phone Number</label>
-                    <div class="phone-input">
-                        <select class="country-code" name="country-code">
-                            <option value="+91">🇮🇳 +91</option>
-                            <option value="+1">🇺🇸 +1</option>
-                            <option value="+44">🇬🇧 +44</option>
-                            <option value="+61">🇦🇺 +61</option>
-                            <option value="+971">🇦🇪 +971</option>
-                        </select>
-                        <input type="tel" id="phone" name="phone" class="phone-number" required 
-                               pattern="[0-9]{10}" placeholder="9876543210">
-                    </div>
-                    <div class="error-message" id="phone-error">Please enter a valid 10-digit phone number</div>
+                  <label for="phone">Mobile Number</label>
+                  <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your mobile number" required>
                 </div>
                 
-                <div class="form-group">
-                    <label for="subject" class="required-field">Subject</label>
-                    <input type="text" id="subject" name="subject" required placeholder="Course enquiry">
-                    <div class="error-message" id="subject-error">Please enter a subject</div>
+                <div class="form-actions">
+                  <div></div> <!-- Empty div for spacing -->
+                  <button type="button" class="btn btn-primary" onclick="nextPage(1, 2)">Next</button>
                 </div>
-                
-                <div class="form-group">
-                    <label for="course" class="required-field">Interested Course</label>
-                    <select id="course" name="course" required>
-                        <option value="" disabled selected>Select a course</option>
-                        <option value="Web Development">Web Development</option>
-                        <option value="Python Programming">Python Programming</option>
-                        <option value="AI/ML Engineering">AI/ML Engineering</option>
-                        <option value="Data Science">Data Science</option>
-                        <option value="C Programming">C Programming</option>
-                        <option value="C++ Programming">C++ Programming</option>
-                    </select>
-                    <div class="error-message" id="course-error">Please select a course</div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message" class="required-field">Your Message</label>
-                    <textarea id="message" name="message" required placeholder="Tell us about your requirements..."></textarea>
-                    <div class="error-message" id="message-error">Please enter your message</div>
-                </div>
-                
-                <button type="submit" id="submit-btn">Submit Registration</button>
-            </form>
-        </div>
-
-        <!-- Thank You Message (Hidden by Default) -->
-        <div class="container thank-you" id="thank-you">
-            <h1>Thank You! ✅</h1>
-            <p>Your registration has been submitted successfully.</p>
-            <p>We will contact you shortly with more information.</p>
-            <p>For immediate assistance, please call us at <strong>+91 8077799237</strong></p>
-            <p>Or email us at <strong>syntaxschool1@gmail.com</strong></p>
-        </div>
-    </div>
- 
-
-
-    <script>
-      // Mobile menu toggle
-      document.getElementById('menu-toggle').addEventListener('click', function() {
-          document.getElementById('nav-links').classList.toggle('active');
-      });
-
-      // Form validation
-      document.getElementById('myForm').addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          // Reset error messages
-          const errorMessages = document.querySelectorAll('.error-message');
-          errorMessages.forEach(msg => msg.style.display = 'none');
-          
-          // Validate form fields
-          let isValid = true;
-          
-          // Name validation
-          const name = document.getElementById('name').value.trim();
-          if (name === '') {
-              document.getElementById('name-error').style.display = 'block';
-              isValid = false;
-          }
-          
-          // Email validation
-          const email = document.getElementById('email').value.trim();
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(email)) {
-              document.getElementById('email-error').style.display = 'block';
-              isValid = false;
-          }
-          
-          // Phone validation
-          const phone = document.getElementById('phone').value.trim();
-          if (phone === '' || !/^\d{10}$/.test(phone)) {
-              document.getElementById('phone-error').style.display = 'block';
-              isValid = false;
-          }
-          
-          // Subject validation
-          const subject = document.getElementById('subject').value.trim();
-          if (subject === '') {
-              document.getElementById('subject-error').style.display = 'block';
-              isValid = false;
-          }
-          
-          // Course validation
-          const course = document.getElementById('course').value;
-          if (course === '' || course === null) {
-              document.getElementById('course-error').style.display = 'block';
-              isValid = false;
-          }
-          
-          // Message validation
-          const message = document.getElementById('message').value.trim();
-          if (message === '') {
-              document.getElementById('message-error').style.display = 'block';
-              isValid = false;
-          }
-          
-          if (!isValid) {
-              // Scroll to first error
-              const firstError = document.querySelector('.error-message[style="display: block;"]');
-              if (firstError) {
-                  firstError.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'center'
-                  });
-              }
-              return;
-          }
-          
-          // Disable submit button to prevent multiple submissions
-          const submitBtn = document.getElementById('submit-btn');
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Submitting...';
-          
-          // Submit form
-          fetch(this.action, {
-              method: 'POST',
-              body: new FormData(this)
-          })
-          .then(response => {
-              if (response.ok) {
-                  // Hide form, show thank you message
-                  document.getElementById('form-container').style.display = 'none';
-                  document.getElementById('thank-you').style.display = 'block';
-                  
-                  // Scroll to thank you message
-                  document.getElementById('thank-you').scrollIntoView({
-                      behavior: 'smooth'
-                  });
-                  
-                  // Reset form
-                  this.reset();
-              } else {
-                  throw new Error('Network response was not ok');
-              }
-          })
-          .catch(error => {
-              alert('There was a problem submitting your form. Please try again.');
-              submitBtn.disabled = false;
-              submitBtn.textContent = 'Submit Registration';
-          });
-      });
-
-      // Real-time validation
-      document.querySelectorAll('input, select, textarea').forEach(element => {
-          element.addEventListener('input', function() {
-              const errorElement = document.getElementById(this.id + '-error');
-              if (errorElement) {
-                  errorElement.style.display = 'none';
-              }
+              </div>
               
-              // Phone number - allow only digits
-              if (this.id === 'phone') {
-                  this.value = this.value.replace(/\D/g, '').slice(0, 10);
-              }
-          });
-      });
+              <!-- Page 2: Course Selection -->
+              <div class="form-page" id="page2">
+                <h2 style="margin-bottom: 20px; color: #00aaff;">Select Your Course</h2>
+                <div class="course-options">
+                  <div class="course-option" onclick="selectCourse(this, 'ai-ml')">
+                    <h3>AI/ML Engineering</h3>
+                    <p>Master artificial intelligence and machine learning algorithms</p>
+                    <div class="course-price">₹6,999</div>
+                  </div>
+                  <div class="course-option" onclick="selectCourse(this, 'data-science')">
+                    <h3>Data Science</h3>
+                    <p>Become proficient in data analysis, visualization, and machine learning</p>
+                    <div class="course-price">₹7,499</div>
+                  </div>
+                  <div class="course-option" onclick="selectCourse(this, 'dsa-cpp')">
+                    <h3>DSA Using C++</h3>
+                    <p>Learn Data Structures and Algorithms from scratch using C++ with real-world problems</p>
+                    <div class="course-price">₹9,999</div>
+                  </div>
+                  <div class="course-option" onclick="selectCourse(this, 'python')">
+                    <h3>Python Programming</h3>
+                    <p>Versatile language for web development, data science, and automation</p>
+                    <div class="course-price">₹3,999</div>
+                  </div>
+                  <div class="course-option" onclick="selectCourse(this, 'cpp')">
+                    <h3>C++ Programming</h3>
+                    <p>Learn object-oriented programming with industry-standard practices</p>
+                    <div class="course-price">₹3,999</div>
+                  </div>
+                  <div class="course-option" onclick="selectCourse(this, 'c')">
+                    <h3>C Programming</h3>
+                    <p>Master the fundamentals of procedural programming and system development</p>
+                    <div class="course-price">₹2,999</div>
+                  </div>
+                </div>
+                
+                <input type="hidden" id="selected-course" name="course" value="">
+                <input type="hidden" id="selected-course-price" name="course_price" value="">
+                
+                <div class="form-actions">
+                  <button type="button" class="btn btn-secondary" onclick="prevPage(2, 1)">Previous</button>
+                  <button type="button" class="btn btn-primary" onclick="nextPage(2, 3)" id="course-next-btn" disabled>Next</button>
+                </div>
+              </div>
+              
+              <!-- Page 3: Payment -->
+              <div class="form-page" id="page3">
+                <h2 style="margin-bottom: 20px; color: #00aaff;">Payment Information</h2>
+                
+                <div class="form-group">
+                  <label>Selected Course</label>
+                  <p id="display-course" class="form-control" style="background-color: #f5f5f5;"></p>
+                </div>
+                
+                <div class="form-group">
+                  <label>Course Fee</label>
+                  <p id="display-price" class="form-control" style="background-color: #f5f5f5;"></p>
+                </div>
+                
+                <div class="qr-code-container">
+                  <h3 style="margin-bottom: 15px; color: #333;">Scan this QR code to pay</h3>
+                  <div class="qr-code">
+                    <!-- Replace with your actual QR code image -->
+                    <img src="img/upi.jpg" alt="Payment QR Code">
+                  </div>
+                  <!-- <p style="margin-top: 15px; color: #666;">UPI ID: syntaxschool@upi</p> -->
+                </div>
+                
+                <div class="form-group">
+                  <label for="transaction-id">Transaction ID / UPI Reference Number</label>
+                  <input type="text" id="transaction-id" name="transaction_id" class="form-control" placeholder="Enter your transaction reference" required>
+                  
+                  <div class="file-upload">
+                    <label class="file-upload-label">Upload Payment Screenshot</label>
+                    <input type="file" id="payment-screenshot" name="payment_screenshot" class="file-upload-input" accept="image/*" required>
+                  </div>
+                </div>
+                
+                <div class="form-actions">
+                  <button type="button" class="btn btn-secondary" onclick="prevPage(3, 2)">Previous</button>
+                  <button type="submit" class="btn btn-primary">Complete Registration</button>
+                </div>
+              </div>
+              
+              <!-- Page 4: Confirmation -->
+              <div class="form-page" id="page4">
+                <div class="confirmation-message">
+                  <i class="fas fa-check-circle"></i>
+                  <h2>Registration Successful!</h2>
+                  <p>Thank you for registering with Syntax School. We have received your payment details and course selection.</p>
+                  <p>You will receive a payment confirmation email at <strong>syntaxschool1@gmail.com</strong> within 24 hours. Our team will contact you shortly with further details about your course.</p>
+                  <p>If you have any questions, please contact us at syntaxschool1@gmail.com</p>
+                  <button type="button" class="btn btn-primary" onclick="window.location.href='courses.html'">Back to Courses</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- Brand & Contact -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img src="img/sy.jpg" alt="Syntax School Logo" class="footer-logo">
+            <span class="footer-brand-name">SYNTAX SCHOOL</span>
+          </a>
 
-      // REMOVED the auto-formatting on blur that was adding hyphens
+          <div class="footer-social">
+            <a href="https://www.instagram.com/syntax_school?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+              <i class="fa-brands fa-square-instagram"></i>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-linkedin" style="color: #286ce2"></i>
+            </a>
+          </div>
+
+          <div class="footer-contact">
+            <a href="mailto:syntaxschool1@gmail.com">📧 syntaxschool1@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-links">
+          <div class="links-column">
+            <h4 class="links-heading">Learn</h4>
+            <ul>
+              <li><a href="#">Courses</a></li>
+              <li><a href="#">Tutorials</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Challenges</a></li>
+            </ul>
+          </div>
+          <div class="links-column">
+            <h4 class="links-heading">Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="courses.html">Careers</a></li>
+              <li><a href="index.html">Testimonials</a></li>
+              <li><a href="about.html">Partners</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 SYNTAX SCHOOL. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle navigation menu for smaller screens
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+    // Course data with prices
+    const courses = {
+      'ai-ml': { name: 'AI/ML Engineering', price: '₹6,999' },
+      'data-science': { name: 'Data Science', price: '₹7,499' },
+      'dsa-cpp': { name: 'DSA Using C++', price: '₹9,999' },
+      'python': { name: 'Python Programming', price: '₹3,999' },
+      'cpp': { name: 'C++ Programming', price: '₹3,999' },
+      'c': { name: 'C Programming', price: '₹2,999' }
+    };
+
+    // Form navigation functions
+    function nextPage(current, next) {
+      // Validate current page before proceeding
+      if (current === 1) {
+        const fullname = document.getElementById('fullname').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        
+        if (!fullname || !email || !phone) {
+          alert('Please fill in all personal information fields');
+          return;
+        }
+      } else if (current === 2) {
+        const selectedCourse = document.getElementById('selected-course').value;
+        if (!selectedCourse) {
+          alert('Please select a course');
+          return;
+        }
+        
+        // Display selected course and price in payment page
+        document.getElementById('display-course').textContent = courses[selectedCourse].name;
+        document.getElementById('display-price').textContent = courses[selectedCourse].price;
+      } else if (current === 3) {
+        const transactionId = document.getElementById('transaction-id').value;
+        const paymentScreenshot = document.getElementById('payment-screenshot').files[0];
+        if (!transactionId || !paymentScreenshot) {
+          alert('Please enter transaction ID and upload payment screenshot');
+          return;
+        }
+      }
+      
+      // Hide current page
+      document.getElementById('page' + current).classList.remove('active');
+      document.getElementById('step' + current).classList.remove('active');
+      
+      // Show next page
+      document.getElementById('page' + next).classList.add('active');
+      document.getElementById('step' + next).classList.add('active');
+      
+      // Mark current step as completed
+      document.getElementById('step' + current).classList.add('completed');
+      
+      // Scroll to top of form
+      document.querySelector('.form-body').scrollTop = 0;
+    }
+
+    function prevPage(current, prev) {
+      // Hide current page
+      document.getElementById('page' + current).classList.remove('active');
+      document.getElementById('step' + current).classList.remove('active');
+      
+      // Show previous page
+      document.getElementById('page' + prev).classList.add('active');
+      document.getElementById('step' + prev).classList.add('active');
+      
+      // Scroll to top of form
+      document.querySelector('.form-body').scrollTop = 0;
+    }
+
+    // Course selection function
+    function selectCourse(element, courseId) {
+      // Remove selected class from all options
+      document.querySelectorAll('.course-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      
+      // Add selected class to clicked option
+      element.classList.add('selected');
+      
+      // Set the selected course value
+      document.getElementById('selected-course').value = courseId;
+      document.getElementById('selected-course-price').value = courses[courseId].price;
+      
+      // Enable next button
+      document.getElementById('course-next-btn').disabled = false;
+    }
+
+    // Handle form submission
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent default form submission
+      
+      // Show confirmation page
+      nextPage(3, 4);
+      
+      // Create FormData object
+      const formData = new FormData(this);
+      
+      // Add additional hidden fields
+      formData.append('_subject', 'New Course Registration');
+      formData.append('_template', 'table');
+      formData.append('_next', 'https://syntaxschool.in/thank-you.html');
+      formData.append('_captcha', 'false');
+      
+      // Submit the form via fetch API
+      fetch('https://formsubmit.co/ajax/syntaxschool1@gmail.com', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error));
+    });
   </script>
 </body>
 </html>
