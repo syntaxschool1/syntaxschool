@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syntax School courses</title>
+  
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Syntax School - Learn Web Development, Python, AI & Data Science with live projects and placement assistance" />
+    <meta name="keywords" content="Syntax School, web development, learn coding, Python, AI, Data Science, coding bootcamp, placement, programming" />
+    <meta name="author" content="Syntax School" />
+  
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="rdV0a-jIriQO0FFvOxnc6J7hakBYeUEg5ehf0Roosuw" />
+  
+    <!-- Open Graph for Facebook / WhatsApp -->
+    <meta property="og:title" content="Syntax School - Learn Web Dev, Python & AI" />
+    <meta property="og:description" content="Live projects, full stack development, and placement support. Join Syntax School now!" />
+    <meta property="og:image" content="https://syntaxschool.in/img/sy.jpg" />
+    <meta property="og:url" content="https://syntaxschool.in/" />
+    <meta property="og:type" content="website" />
+  
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Syntax School - Learn Web Dev, Python & AI" />
+    <meta name="twitter:description" content="Join Syntax School for full stack development and data science with projects and placement support." />
+    <meta name="twitter:image" content="https://syntaxschool.in/img/sy.jpg" />
+  
+    <!-- Favicon -->
+    <link href="img/sy.jpg" rel="icon" />
+  
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Underdog&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Arial", sans-serif;
+            padding-top: 0;
+        }
+
+        /* Fixed Navbar */
+        .navbar {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 5%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            height: 84px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo {
+            height: 60px;
+            margin-right: 15px;
+        }
+
+        .brand-name {
+            white-space: nowrap;
+            color: #00aaff;
+            font-size: 29px;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            font-family: "Underdog", system-ui;
+        }
+
+        .brand-name:hover {
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        nav a.active {
+            background-color: #00aaff;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #039ae5;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background-color: #00aaff;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: #00aaff;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            flex-direction: column;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1000;
+            min-width: 200px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: flex;
+        }
+
+        .dropdown-menu li a {
+            padding: 10px 20px;
+            color: #333;
+            background-color: #fff;
+            display: block;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #00aaff;
+            color: #fff;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .navbar {
+                padding: 12px 3%;
+            }
+
+            .nav-links li {
+                margin-left: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+                padding: 10px 20px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #ffffff;
+                position: absolute;
+                top: 84px;
+                left: 0;
+                padding: 15px 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 8px 0;
+                text-align: center;
+                margin-left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo {
+                height: 50px;
+            }
+
+            .brand-name {
+                font-size: 24px;
+            }
+
+            .menu-toggle {
+                font-size: 24px;
+            }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #2563EB;
+            --primary-light: #3B82F6;
+            --dark: #1F2937;
+            --gray: #6B7280;
+            --light-gray: #F3F4F6;
+            --white: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light-gray);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            margin-top: 84px; /* To account for fixed navbar */
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            min-width: 150px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .feature-desc {
+            color: var(--gray);
+        }
+        
+        .testimonials {
+            margin: 60px 0;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            text-align: right;
+            color: var(--primary);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .hero {
+                padding: 30px;
+            }
+            
+            .stats {
+                gap: 15px;
+            }
+            
+            .stat-card {
+                min-width: 120px;
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">
+          <a href="index.html">
+            <img src="img/sy.jpg" alt="Logo" class="logo" />
+            <span class="brand-name">SYNTAX SCHOOL</span>
+          </a>
+        </div>
+  
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="about.html">My Batch</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+     
+    <div class="container">
+        <header>
+            <div class="logo">Syntax School</div>
+            <p class="tagline">Premier IT training institute in Jaipur transforming careers through hands-on, industry-relevant education</p>
+        </header>
+        
+        <div class="hero">
+            <h1 class="section-title">Why Choose Syntax School?</h1>
+            <p style="text-align: center; color: var(--gray); max-width: 700px; margin: 0 auto 30px;">
+                We bridge the gap between academic learning and industry requirements through our practical, mentor-led approach.
+            </p>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Students Trained</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Placement Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Hiring Partners</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support</div>
+                </div>
+            </div>
+        </div>
+        
+        <section>
+            <h2 class="section-title">Our Differentiators</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="feature-title">Project-Based Learning</h3>
+                    <p class="feature-desc">Work on real-world projects that mirror actual workplace scenarios, building a portfolio that impresses employers.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="feature-title">Expert Instructors</h3>
+                    <p class="feature-desc">Learn from industry professionals with 5+ years of experience at top tech companies.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="feature-title">Career Services</h3>
+                    <p class="feature-desc">Comprehensive placement support including resume building, mock interviews, and recruiter connections.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">Flexible Schedules</h3>
+                    <p class="feature-desc">Choose from full-time immersive programs or part-time courses that fit your current commitments.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Peer Learning</h3>
+                    <p class="feature-desc">Collaborate with like-minded learners through code reviews and group projects.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="feature-title">Industry Recognition</h3>
+                    <p class="feature-desc">Our certificates are valued by employers across India's tech ecosystem.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonials">
+            <h2 class="section-title">Success Stories</h2>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The Full Stack Development program at Syntax School gave me the practical skills I needed to transition from mechanical engineering to software development. Within 2 months of completing the course, I received 3 job offers."</p>
+                <p class="testimonial-author">- Rohan Mehta, Software Engineer at Adobe</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"What sets Syntax School apart is their focus on real-world problem solving. The cloud computing projects I worked on during the course became talking points in all my interviews."</p>
+                <p class="testimonial-author">- Priya Sharma, Cloud Engineer at Microsoft</p>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <h2 class="section-title">Ready to Transform Your Career?</h2>
+            <p style="text-align: center; color: var(--gray); max-width: 600px; margin: 0 auto 30px;">
+                Take the first step toward a rewarding career in tech. Our advisors are ready to help you choose the right path.
+            </p>
+            <a href="Contact.html" class="cta-button">Schedule a Free Consultation</a>
+            
+            <div style="margin-top: 30px; color: var(--gray);">
+                <p>Have questions? <a href="mailto:syntaxschool1@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 500;">Contact our team</a></p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Toggle navigation menu for smaller screens
+        const toggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("nav-links");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

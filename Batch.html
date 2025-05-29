@@ -1,0 +1,1499 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syntax School courses</title>
+  
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Syntax School - Learn Web Development, Python, AI & Data Science with live projects and placement assistance" />
+    <meta name="keywords" content="Syntax School, web development, learn coding, Python, AI, Data Science, coding bootcamp, placement, programming" />
+    <meta name="author" content="Syntax School" />
+  
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="rdV0a-jIriQO0FFvOxnc6J7hakBYeUEg5ehf0Roosuw" />
+  
+    <!-- Open Graph for Facebook / WhatsApp -->
+    <meta property="og:title" content="Syntax School - Learn Web Dev, Python & AI" />
+    <meta property="og:description" content="Live projects, full stack development, and placement support. Join Syntax School now!" />
+    <meta property="og:image" content="https://syntaxschool.in/img/sy.jpg" />
+    <meta property="og:url" content="https://syntaxschool.in/" />
+    <meta property="og:type" content="website" />
+  
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Syntax School - Learn Web Dev, Python & AI" />
+    <meta name="twitter:description" content="Join Syntax School for full stack development and data science with projects and placement support." />
+    <meta name="twitter:image" content="https://syntaxschool.in/img/sy.jpg" />
+  
+    <!-- Favicon -->
+    <link href="img/sy.jpg" rel="icon" />
+  
+    <!-- Fonts and Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Underdog&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+         * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        padding-top: 0;
+      }
+
+      /* Fixed Navbar */
+      .navbar {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 5%;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        height: 84px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+      }
+
+      .brand a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .logo {
+        height: 60px;
+        margin-right: 15px;
+      }
+
+      .brand-name {
+        white-space: nowrap;
+        color: #00aaff;
+        font-size: 29px;
+        font-weight: 800;
+        transition: all 0.3s ease;
+        font-family: "Underdog", system-ui;
+      }
+
+      .brand-name:hover {
+        color: #000;
+        transform: scale(1.05);
+      }
+
+      nav a.active {
+        background-color: #00aaff;
+        color: white;
+        border-radius: 10px;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links li {
+        margin-left: 25px;
+        position: relative;
+      }
+
+      .nav-links a {
+        color: #039ae5;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 12px;
+        position: relative;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+      }
+
+      .nav-links a:hover {
+        background-color: #00aaff;
+        color: white;
+        border-radius: 10px;
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 28px;
+        color: #00aaff;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        z-index: 1000;
+        min-width: 200px;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: flex;
+      }
+
+      .dropdown-menu li a {
+        padding: 10px 20px;
+        color: #333;
+        background-color: #fff;
+        display: block;
+      }
+
+      .dropdown-menu li a:hover {
+        background-color: #00aaff;
+        color: #fff;
+      }
+      
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .navbar {
+          padding: 12px 3%;
+        }
+
+        .nav-links li {
+          margin-left: 15px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-wrap: wrap;
+          padding: 10px 20px;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background-color: #ffffff;
+          position: absolute;
+          top: 84px;
+          left: 0;
+          padding: 15px 0;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-links li {
+          margin: 8px 0;
+          text-align: center;
+          margin-left: 0;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .logo {
+          height: 50px;
+        }
+
+        .brand-name {
+          font-size: 24px;
+        }
+
+        .menu-toggle {
+          font-size: 24px;
+        }
+      }
+
+
+/* Live Classes Section - Flexbox Version */
+.live-classes-section {
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #2d3436;
+    margin-bottom: 0.5rem;
+}
+
+.section-subheading {
+    text-align: center;
+    color: #636e72;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.live-classes-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.live-class-card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+
+    
+
+    border: 3px solid #00aaff;
+}
+
+.live-class-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image-container {
+    position: relative;
+    height: 0;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+}
+
+.class-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.class-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    z-index: 1;
+}
+
+.class-badge.live {
+    background-color: #e74c3c;
+}
+
+.class-badge.upcoming {
+    background-color: #3498db;
+}
+
+.class-content {
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.class-subject {
+    font-size: 1.2rem;
+    color: #2d3436;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.class-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: #636e72;
+    font-size: 0.9rem;
+}
+
+.class-info i {
+    margin-right: 0.5rem;
+    color: #00aaff;
+    min-width: 16px;
+}
+
+.join-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+.join-button i {
+    margin-right: 8px;
+}
+
+.join-button:hover {
+    background-color: #0088cc;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.class-badge.live {
+  background-color: #e91f1f;
+  animation: blink 1s infinite;
+}
+
+:root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        /* Section Header */
+        .section-heading {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .section-subheading {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Batches Container */
+        .batches-container {
+            position: relative;
+            padding: 1rem 0;
+        }
+        
+        .batches-scroll {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .batches-scroll::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+        
+        /* Batch Card */
+        .batch-card {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .batch-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-image-container {
+            position: relative;
+            height: 0;
+            padding-top: 60%;
+            overflow: hidden;
+        }
+        
+        .batch-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .batch-card:hover .batch-image {
+            transform: scale(1.05);
+        }
+        
+        .batch-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .batch-header {
+            padding: 1.2rem 1.2rem 0;
+        }
+        
+        .batch-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .batch-details {
+            padding: 0 1.2rem 1rem;
+            flex-grow: 1;
+        }
+        
+        .batch-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .batch-info i {
+            margin-right: 0.75rem;
+            color: var(--accent);
+            width: 16px;
+            text-align: center;
+        }
+        
+        .batch-features {
+            margin: 1rem 0;
+        }
+        
+        .batch-features li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #495057;
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .batch-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--success);
+        }
+        
+        .batch-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.2rem;
+            background: linear-gradient(90deg, rgba(67,97,238,0.1) 0%, rgba(72,149,239,0.05) 100%);
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .batch-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+        
+        .batch-price span {
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+        
+        .enroll-button {
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(67,97,238,0.3);
+        }
+        
+        .enroll-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67,97,238,0.4);
+        }
+        
+        /* Navigation Arrows */
+        .scroll-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            z-index: 2;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-arrow:hover {
+            opacity: 1;
+            background: var(--primary);
+            color: white;
+        }
+        
+        .arrow-left {
+            left: -20px;
+        }
+        
+        .arrow-right {
+            right: -20px;
+        }
+
+
+
+        /* Instructors Section */
+    .instructors-section {
+        padding: 5rem 1rem;
+        background-color: #f8f9fa;
+    }
+    
+    .instructors-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .section-heading {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #2d3436;
+        margin-bottom: 0.8rem;
+        position: relative;
+    }
+    
+    .section-heading::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #4361ee, #3f37c9);
+        border-radius: 2px;
+    }
+    
+    .section-subheading {
+        text-align: center;
+        color: #636e72;
+        margin-bottom: 3rem;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .instructors-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+    
+    .instructor-card {
+        flex: 1 1 300px;
+        max-width: 350px;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .instructor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    
+    .instructor-image-container {
+        position: relative;
+        height: 0;
+        padding-top: 100%; /* Square aspect ratio */
+        overflow: hidden;
+    }
+    
+    .instructor-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .instructor-card:hover .instructor-image {
+        transform: scale(1.05);
+    }
+    
+    .instructor-social {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .instructor-card:hover .instructor-social {
+        opacity: 1;
+    }
+    
+    .instructor-social a {
+        color: white;
+        background: rgba(0,0,0,0.7);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    .instructor-social a:hover {
+        background: #4361ee;
+        transform: translateY(-3px);
+    }
+    
+    .instructor-info {
+        padding: 1.5rem;
+    }
+    
+    .instructor-name {
+        font-size: 1.4rem;
+        color: #2d3436;
+        margin-bottom: 0.3rem;
+    }
+    
+    .instructor-title {
+        color: #636e72;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+    
+    .instructor-exp {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: #636e72;
+    }
+    
+    .instructor-exp i {
+        margin-right: 5px;
+        color: #4361ee;
+    }
+    
+    .instructor-bio {
+        color: #636e72;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1.2rem;
+    }
+    
+    .instructor-expertise {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .instructor-expertise span {
+        background: #f1f3ff;
+        color: #4361ee;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+    
+    .profile-btn {
+        display: inline-flex;
+        align-items: center;
+        color: #4361ee;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .profile-btn i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+    
+    .profile-btn:hover {
+        color: #3f37c9;
+    }
+    
+    .profile-btn:hover i {
+        transform: translateX(3px);
+    }
+    
+    
+ /* footer h yha se  */ 
+
+
+      /* Footer */
+      .site-footer {
+        background-color: #2d3436;
+        color: #f5f6fa;
+        padding: 60px 0 20px;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: 15px;
+      }
+
+      .footer-logo {
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      .footer-brand-name {
+        color: #00aaff;
+        font-size: 24px;
+        font-weight: 700;
+        font-family: "Underdog", system-ui;
+      }
+
+      .footer-tagline {
+        color: #b2bec3;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icon {
+        color: #b2bec3;
+        font-size: 20px;
+        transition: all 0.3s ease;
+      }
+.footermail{
+  text-decoration: none;
+  font-size: 18px; 
+  color: #039ae5;
+}
+.footermail:hover{
+  color: #00aaff;
+}
+      .social-icon:hover {
+        color: #00aaff;
+        transform: translateY(-3px);
+      }
+
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 30px;
+      }
+
+      .links-column h4 {
+        color: #00aaff;
+        margin-bottom: 20px;
+        font-size: 18px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .links-column h4::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background: #00aaff;
+      }
+
+      .links-column ul {
+        list-style: none;
+      }
+
+      .links-column li {
+        margin-bottom: 12px;
+      }
+
+      .links-column a {
+        color: #b2bec3;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .links-column a:hover {
+        color: #00aaff;
+        padding-left: 5px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #3d4a52;
+        padding-top: 20px;
+        text-align: center;
+        color: #b2bec3;
+        font-size: 14px;
+      }
+         /* Compact Hero Section (1/3 of screen) */
+         .hero-section {
+            position: relative;
+            height: 33vh; /* Takes 1/3 of viewport height */
+            min-height: 300px; /* Minimum height for smaller screens */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            color: #fff;
+            overflow: hidden;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            margin-top: 84px; 
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem; /* Slightly smaller heading */
+            font-weight: 700;
+            margin-bottom: 1rem; /* Reduced spacing */
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem; /* Slightly smaller text */
+            margin-bottom: 1.5rem; /* Reduced spacing */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        /* Compact CTA Button */
+        .hero-cta {
+            display: inline-block;
+            padding: 12px 25px; /* Slightly smaller button */
+            background-color: #00aaff;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1.4s ease-out;
+            border: 2px solid transparent;
+        }
+
+        .hero-cta:hover {
+            background-color: transparent;
+            color: #fff;
+            border-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+ 
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 250px;
+                margin-top: 70px;
+            }
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .hero-cta {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+            .hero-section p {
+                font-size: 0.9rem;
+            }
+        }
+ 
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+
+    </style>
+  </head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">
+          <a href="index.html">
+            <img src="img/sy.jpg" alt="Logo" class="logo" />
+            <span class="brand-name">SYNTAX SCHOOL</span>
+          </a>
+        </div>
+  
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="courses.html" >Courses</a></li>
+          
+        <li><a href="Batch.html" class="active">My Batch</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+ <!-- main batch code started--> 
+ <section class="hero-section">
+    <div class="hero-content">
+        <h1>Join Our Live Classes</h1>
+        <p>Learn directly from industry experts with hands-on projects</p>
+        <a href="courses.html" class="hero-cta">Enroll Now</a>
+    </div>
+</section>
+
+
+<div class="container">
+    <section class="live-classes-section">
+        <h1 class="section-heading">Live Classes Schedule</h1>
+        <p class="section-subheading">Click to join your class</p>
+        
+        <div class="live-classes-flex">
+            <!-- AI/ML Class -->
+            <div class="live-class-card">
+                <div class="card-image-container">
+                    <img src="img/ai.jpg" alt="AI/ML Class" class="class-image">
+                    <!-- <div class="class-badge live">Class on 8pm</div> -->
+                    <div class="class-badge upcoming">Starting Soon</div>
+                </div>
+                
+                <div class="class-content">
+                    <h3 class="class-subject">AI/ML Engineering</h3>
+                    <div class="class-info">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>AI-1 </span>
+                    </div>
+                    <div class="class-info">
+                        <i class="fas fa-calendar-day"></i>
+                        <span>08:00 PM - 09:30 PM</span>
+                    </div>
+                   
+                    
+                    <!-- <div class="class-info">
+                        <i class="fas fa-clock"></i>
+                        <span>Started: 28 May 2025</span>
+                    </div> -->
+                </div>
+                <button class="join-button" onclick="window.open('https://meet.google.com/zgv-gdma-cjk?authuser=0', '_blank')">
+                    <i class="fas fa-video"></i> Join Class
+                </button>
+            </div>
+            
+            <!-- Data Science Class -->
+            <div class="live-class-card">
+                <div class="card-image-container">
+                    <img src="img/Data-Science.webp" alt="Data Science Class" class="class-image">
+                    <div class="class-badge upcoming">Starting Soon</div>
+                </div>
+                <div class="class-content">
+                    <h3 class="class-subject">Data Science</h3>
+                    <div class="class-info">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>M-1</span>
+                    </div>
+                    <div class="class-info">
+                        <i class="fas fa-calendar-day"></i>
+                        <span>Flexible Timing</span>
+                    </div>
+                  
+                    <!-- <div class="class-info">
+                        <i class="fas fa-clock"></i>
+                        <span>Starts: 1 Jun 2025</span>
+                    </div> -->
+                </div>
+                <button class="join-button" onclick="window.open('https://meet.google.com/zgv-gdma-cjk?authuser=0', '_blank')">
+                    <i class="fas fa-video"></i> Join Class
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<div class="container">
+    <!-- Upcoming Batches Section -->
+    <section class="upcoming-batches-section">
+        <h1 class="section-heading">Upcoming Batches</h1>
+        <p class="section-subheading">New batches starting soon - Enroll now to secure your spot!</p>
+        
+        <div class="batches-container">
+            <div class="batches-scroll">
+                <!-- Batch 1 -->
+                <div class="batch-card">
+                    <div class="card-image-container">
+                        <img src="img/python.webp" alt="Python Programming" class="batch-image">
+                     
+                    </div>
+                    <div class="batch-header">
+                        <h3 class="batch-title">Python Programming</h3>
+                    </div>
+                    <div class="batch-details">
+                        <div class="batch-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Starts: Soon</span>
+                        </div>
+                        <div class="batch-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Flexible Timing</span>
+                        </div>
+                        <div class="batch-info">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Mentor: Raghav Sandhu</span>
+                        </div>
+                        <ul class="batch-features">
+                            <li>2 Months</li>
+                            <li>Basic to Advanced Level</li>
+                            <li>Projects</li>
+                            <li>Certification</li>
+                            <li>Placement Assistance</li>
+                        </ul>
+                    </div>
+                    <div class="batch-footer">
+                        <div class="batch-price">₹3,999 <span>₹6,999</span></div>
+                        <a href="register.html" class="enroll-button">Enroll Now</a>
+                    </div>
+                </div>
+                
+                <!-- Batch 2 -->
+                <div class="batch-card">
+                    <div class="card-image-container">
+                        <img src="img/dsa.webp" alt="DSA Using C++" class="batch-image">
+                        <!-- <div class="batch-tag">New</div> -->
+                    </div>
+                    <div class="batch-header">
+                        <h3 class="batch-title">DSA Using C++</h3>
+                    </div>
+                    <div class="batch-details">
+                        <div class="batch-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Starts: Soon</span>
+                        </div>
+                        <div class="batch-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Flexible Timing</span>
+                        </div>
+                        <div class="batch-info">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Mentor: Pallvi Mehar</span>
+                        </div>
+                        <ul class="batch-features">
+                            <li>3 Months</li>
+                            <li>Problems & Solutions</li>
+                            <li>Interview Preparation</li>
+                            <li>Projects</li>
+                            <li>Certificate </li>
+                        </ul>
+                    </div>
+                    <div class="batch-footer">
+                        <div class="batch-price">₹9,999 <span>₹12,999</span></div>
+                        <a href="register.html" class="enroll-button">Enroll Now</a>
+                    </div>
+                </div>
+                
+                <!-- Batch 3 -->
+                <div class="batch-card">
+                    <div class="card-image-container">
+                        <img src="img/c++.avif" alt="C++ Programming" class="batch-image">
+                        <!-- <div class="batch-tag">Limited Seats</div> -->
+                    </div>
+                    <div class="batch-header">
+                        <h3 class="batch-title">C++ Programming</h3>
+                    </div>
+                    <div class="batch-details">
+                        <div class="batch-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Starts: Soon</span>
+                        </div>
+                        <div class="batch-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Flexible Timing</span>
+                        </div>
+                        <div class="batch-info">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Mentor: Shanu Kumar</span>
+                        </div>
+                        <ul class="batch-features">
+                            <li>3 Months </li>
+                            <li>From Basics to Advanced</li>
+                            <li>Game Development Project</li>
+                            <li>STL & OOPs Concepts</li>
+                            <li>Completion Certificate</li>
+                        </ul>
+                    </div>
+                    <div class="batch-footer">
+                        <div class="batch-price">₹3,999 <span>₹5,999</span></div>
+                        <a href="register.html" class="enroll-button">Enroll Now</a>
+                    </div>
+                </div>
+
+                <!-- Batch 4 -->
+                <div class="batch-card">
+                    <div class="card-image-container">
+                        <img src="img/c.webp" alt="C Programming" class="batch-image">
+                        <!-- <div class="batch-tag">Foundation</div> -->
+                    </div>
+                    <div class="batch-header">
+                        <h3 class="batch-title">C Programming</h3>
+                    </div>
+                    <div class="batch-details">
+                        <div class="batch-info">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Starts: Soon</span>
+                        </div>
+                        <div class="batch-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Flexible Timing</span>
+                        </div>
+                        <div class="batch-info">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Mentor: joyti seth</span>
+                        </div>
+                        <ul class="batch-features">
+                            <li>2 Months</li>
+                            <li>Algorithmic Thinking</li>
+                            <li>Basic to Advanced</li>
+                            <li>Projects</li>
+                            <li>Certification</li>
+                        </ul>
+                    </div>
+                    <div class="batch-footer">
+                        <div class="batch-price">₹2,999 <span>₹4,499</span></div>
+                        <a href="register.html" class="enroll-button">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <div class="scroll-arrow arrow-left">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="scroll-arrow arrow-right">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- Instructors Section -->
+<section class="instructors-section">
+  <div class="instructors-container">
+      <h1 class="section-heading">Meet Your Mentors</h1>
+      <p class="section-subheading">Learn from industry experts with years of experience</p>
+      
+      <div class="instructors-flex">
+          <!-- Instructor 1 -->
+          <div class="instructor-card">
+              <div class="instructor-image-container">
+                  <img src="img/p2.jpg" alt="Raghav Sandhu" class="instructor-image">
+                  <div class="instructor-social">
+                      <a href="#"><i class="fab fa-linkedin"></i></a>
+                      <a href="#"><i class="fab fa-github"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                  </div>
+              </div>
+              <div class="instructor-info">
+                  <h3 class="instructor-name">Raghav Sandhu</h3>
+                  <p class="instructor-title">AI/ML Lead Instructor</p>
+                  <div class="instructor-exp">
+                      <span><i class="fas fa-briefcase"></i> 5+ years</span>
+                      <span><i class="fas fa-star"></i> 4.9/5</span>
+                  </div>
+                  <p class="instructor-bio">2+ years experience in machine learning . Specializes in deep learning.</p>
+                  <div class="instructor-expertise">
+                      <span>Deep Learning</span>
+                      <span>NLP</span>
+                      <span>TensorFlow</span>
+                  </div>
+                  <a href="#" class="profile-btn">View Full Profile <i class="fas fa-arrow-right"></i></a>
+              </div>
+          </div>
+          
+          <!-- Instructor 2 -->
+          <div class="instructor-card">
+              <div class="instructor-image-container">
+                  <img src="img/joyti.jpg" alt="Amit Sharma" class="instructor-image">
+                  <div class="instructor-social">
+                      <a href="#"><i class="fab fa-linkedin"></i></a>
+                      <a href="#"><i class="fab fa-github"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                  </div>
+              </div>
+              <div class="instructor-info">
+                  <h3 class="instructor-name">Joyti Seth</h3>
+                  <p class="instructor-title">Python Instructor</p>
+                  <div class="instructor-exp">
+                      <span><i class="fas fa-briefcase"></i> 3+ years</span>
+                      <span><i class="fas fa-star"></i> 4.9/5</span>
+                  </div>
+                  <p class="instructor-bio"> 
+                     programming with focus on AI applications.</p>
+                  <div class="instructor-expertise">
+                      <span>Python</span>
+                      <span>Django</span>
+                      <span>Flask</span>
+                  </div>
+                  <a href="#" class="profile-btn">View Full Profile <i class="fas fa-arrow-right"></i></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a href="index.html" class="footer-logo-link">
+                <img src="img/sy.jpg" alt="Syntax School Logo" class="footer-logo">
+                <span class="footer-brand-name">SYNTAX SCHOOL</span>
+              </a>
+              <p class="footer-tagline">Master the language of programming</p>
+              <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+              </div>
+              <div class="footermail">
+                <a href="mailto:syntaxschool1@gmail.com">📧 syntaxschool1@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="footer-links">
+              <div class="links-column">
+                <h4 class="links-heading">Courses</h4>
+                <ul>
+                  <li><a href="web.html">DSA using C++</a></li>
+                  <li><a href="python.html">Python Programming</a></li>
+                  <li><a href="ai.html">AI/ML Engineering</a></li>
+                  <li><a href="data.html">Data Science</a></li>
+                </ul>
+              </div>
+              
+              <div class="links-column">
+                <h4 class="links-heading">Resources</h4>
+                <ul>
+                  <li><a href="blog.html">Blog</a></li> 
+                  <li><a href="#">Community</a></li> 
+                </ul>
+              </div>
+              
+              <div class="links-column">
+                <h4 class="links-heading">Support</h4>
+                <ul>
+                  <li><a href="#">Help Center</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms of Service</a></li>
+                  <li><a href="#">Refund Policy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="footer-bottom">
+            <p>&copy; 2025 SYNTAX SCHOOL. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+  
+ 
+ 
+
+
+
+<script>
+    // Toggle navigation menu for smaller screens
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+ 
+          // Simple scroll functionality for arrows
+          const scrollLeft = document.querySelector('.arrow-left');
+        const scrollRight = document.querySelector('.arrow-right');
+        const batchesScroll = document.querySelector('.batches-scroll');
+        
+        scrollLeft.addEventListener('click', () => {
+            batchesScroll.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+        
+        scrollRight.addEventListener('click', () => {
+            batchesScroll.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+  </script>
+
+
+</body>
+</html> 
