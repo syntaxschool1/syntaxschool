@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI/ML Course Download - Syntax School</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Download Syntax School's AI/ML Course - Master Artificial Intelligence & Machine Learning with our comprehensive materials" />
+  <meta name="keywords" content="AI course download, ML course download, Artificial Intelligence, Machine Learning, Syntax School" />
+  
+  <!-- Favicon -->
+  <link href="img/sy.jpg" rel="icon" />
+
+  <!-- Fonts and Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Underdog&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    
+    body {
+      padding-top: 84px;
+      background-color: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
+    
+    .course-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .course-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .course-header h1 {
+      color: #00aaff;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-family: "Underdog", system-ui;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    .course-header p {
+      color: #6b7280;
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .download-section {
+      background: #f9fafb;
+      padding: 40px;
+      border-radius: 12px;
+      margin-top: 40px;
+      border: 1px solid #e5e7eb;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .download-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, #00aaff, #3b82f6);
+    }
+    
+    .download-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 24px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #111827;
+      font-size: 0.9375rem;
+    }
+    
+    .form-group input, 
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s;
+      background-color: #ffffff;
+      color: #111827;
+    }
+    
+    .form-group input:focus, 
+    .form-group textarea:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      outline: none;
+    }
+    
+    .course-info {
+      background: #f0f7ff;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      border-left: 4px solid #00aaff;
+    }
+    
+    .course-info i {
+      margin-right: 12px;
+      color: #3b82f6;
+      font-size: 1.25rem;
+    }
+    
+    .course-info span {
+      font-weight: 600;
+      color: #111827;
+    }
+    
+    .download-btn {
+      background-color: #111827;
+      color: white;
+      border: none;
+      padding: 16px 24px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
+    }
+    
+    .download-btn:hover {
+      background-color: #00aaff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 170, 255, 0.2);
+    }
+    
+    .download-btn:active {
+      transform: translateY(0);
+    }
+    
+    .download-btn i {
+      margin-right: 10px;
+    }
+    
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      background: #f0fdf4;
+      border-radius: 12px;
+      border: 1px solid #bbf7d0;
+    }
+    
+    .thank-you h2 {
+      color: #166534;
+      margin-bottom: 16px;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    
+    .thank-you p {
+      color: #166534;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    
+    .thank-you .icon {
+      font-size: 48px;
+      color: #22c55e;
+      margin-bottom: 20px;
+    }
+    
+    .course-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 60px 0;
+    }
+    
+    .feature {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, #00aaff, #3b82f6);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    
+    .feature:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature:hover::after {
+      transform: scaleX(1);
+    }
+    
+    .feature-icon {
+      font-size: 32px;
+      color: #3b82f6;
+      margin-bottom: 20px;
+    }
+    
+    .feature h3 {
+      color: #111827;
+      margin-bottom: 16px;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    
+    .feature p {
+      color: #6b7280;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    /* Course badge */
+    .course-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(to right, #00aaff, #3b82f6);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background-color: #111827;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      margin: 60px 0;
+      border-radius: 16px;
+    }
+    
+    .stats-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+    
+    .stat-item {
+      padding: 20px;
+    }
+    
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #00aaff, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1.2rem;
+      color: #e5e7eb;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 5%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      height: 84px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo {
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    .brand-name {
+      white-space: nowrap;
+      color: #00aaff;
+      font-size: 29px;
+      font-weight: 800;
+      transition: all 0.3s ease;
+      font-family: "Underdog", system-ui;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin-left: 25px;
+      position: relative;
+    }
+
+    .nav-links a {
+      color: #039ae5;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 15px;
+      position: relative;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .nav-links a:hover {
+      background-color: #00aaff;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: #00aaff;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .course-container {
+        margin: 40px 30px;
+      }
+    }
+
+    @media (max-width: 970px) {
+      .navbar {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffffff;
+        position: absolute;
+        top: 84px;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 12px 0;
+        text-align: center;
+        margin-left: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+      
+      .course-header h1 {
+        font-size: 2.4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .course-container {
+        padding: 30px;
+        margin: 20px;
+      }
+      
+      .download-section {
+        padding: 30px;
+      }
+      
+      .course-header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .stats-container {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .stat-number {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .logo {
+        height: 50px;
+      margin-right: 10px;
+      }
+      
+      .brand-name {
+        font-size: 24px;
+      }
+
+      .menu-toggle {
+        font-size: 24px;
+      }
+      
+      .course-container {
+        padding: 20px;
+      }
+      
+      .course-header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .course-header p {
+        font-size: 1.1rem;
+      }
+      
+      .stats-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .feature {
+        padding: 25px;
+      }
+      
+      .download-btn {
+        padding: 14px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="brand">
+      <a href="index.html">
+        <img src="img/sy.jpg" alt="Logo" class="logo" />
+        <span class="brand-name">SYNTAX SCHOOL</span>
+      </a>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="Batch.html">My Batch</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="course-container">
+    <div class="course-header">
+      <h1>AI & Machine Learning Course</h1>
+      <p>Master AI/ML concepts with our comprehensive course material designed by industry experts. This course covers everything from fundamental concepts to advanced machine learning techniques.</p>
+    </div>
+    
+    <div class="course-features">
+       
+      
+      <div class="feature">
+        <div class="feature-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3>Practical Projects</h3>
+        <p>Build real-world AI applications with guided projects and code examples.</p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3>Certificate Ready</h3>
+        <p>Earn a certificate upon completion to showcase your AI/ML skills.</p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Career Advancement</h3>
+        <p>Boost your career with in-demand AI/ML skills sought by top employers.</p>
+      </div>
+    </div>
+    
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Students Enrolled</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Hours of Content</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">94%</div>
+          <div class="stat-label">Success Rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Mentor Support</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="download-section-container">
+      <div class="download-section">
+        <div class="course-badge">AI/ML Course</div>
+        <div class="download-form" id="downloadForm">
+          <h2 style="margin-bottom: 20px; text-align: center; font-size: 1.8rem; color: #00aaff;">Download AI/ML Course Materials</h2>
+          <p style="text-align: center; margin-bottom: 24px; color: #6b7280; font-size: 1.1rem;">Fill this form to get instant access to our premium AI & Machine Learning course materials</p>
+          
+          <div class="course-info">
+            <i class="fas fa-book"></i>
+            <span>Course: AI/ML Engineering - Complete Package</span>
+          </div>
+          
+          <form id="aiCourseForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+            </div>
+            
+            <div class="form-group">
+              <label for="interest">What interests you most about AI/ML?</label>
+              <textarea id="interest" name="interest" rows="3" placeholder="Tell us what excites you about AI & Machine Learning (optional)"></textarea>
+            </div>
+            
+            <button type="submit" class="download-btn">
+              <i class="fas fa-download"></i>Download Course Brochure
+            </button>
+          </form>
+        </div>
+        
+        <div class="thank-you" id="thankYou">
+          <div class="icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h2>Thank You for Downloading!</h2>
+          <p>Your AI/ML course materials are now downloading automatically...</p>
+          <p><strong>File downloading: SyntaxSchool_AI_ML_Course.pdf</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle mobile menu
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+    // Form submission handler
+    document.getElementById('aiCourseForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        interest: document.getElementById('interest').value,
+        course: "AI/ML Engineering - Complete Package",
+        timestamp: new Date().toISOString()
+      };
+      
+      // Send form data to email using FormSubmit.co
+      fetch('https://formsubmit.co/ajax/pk621913@gmail.com', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          interest: formData.interest,
+          course: formData.course,
+          _subject: 'New AI/ML Course Download - ' + formData.name,
+          _template: 'table',
+          _replyto: formData.email,
+          _captcha: 'false'
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Form submitted:', data);
+        
+        // Hide form and show thank you message
+        document.getElementById('downloadForm').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+        
+        // Trigger download after 1 second
+        setTimeout(function() {
+          // Create temporary link for download
+          const link = document.createElement('a');
+          link.href = 'pdf/Syntax AIML Discount 6 JUNE.pdf';
+          link.download = 'SyntaxSchool_AI_ML_Course.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          
+          // Track download in console
+          console.log('AI/ML Course downloaded by:', formData.name, formData.email);
+        }, 1000);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Even if email fails, still allow download
+        document.getElementById('downloadForm').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+        
+        setTimeout(function() {
+          const link = document.createElement('a');
+          link.href = 'pdf/Syntax AIML Discount 6 JUNE.pdf';
+          link.download = 'SyntaxSchool_AI_ML_Course.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
